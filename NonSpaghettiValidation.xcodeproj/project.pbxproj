@@ -11,6 +11,9 @@
 		3B0EC0D0284FCCA200ADDCE5 /* MainViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EC0CF284FCCA200ADDCE5 /* MainViewInput.swift */; };
 		3B0EC0D2284FCCAB00ADDCE5 /* MainViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EC0D1284FCCAB00ADDCE5 /* MainViewOutput.swift */; };
 		3B0EC0D4284FCDE700ADDCE5 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EC0D3284FCDE700ADDCE5 /* MainPresenter.swift */; };
+		3B0EC0D7284FD08600ADDCE5 /* ReactiveDataDisplayManager in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0EC0D6284FD08600ADDCE5 /* ReactiveDataDisplayManager */; };
+		3B0EC0DA284FD69B00ADDCE5 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EC0D9284FD69B00ADDCE5 /* InputCell.swift */; };
+		3B1418DA284FDEA2001539D5 /* InputCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1418D9284FDEA2001539D5 /* InputCellModel.swift */; };
 		3BD54C41284FC64C0004EACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C40284FC64C0004EACB /* AppDelegate.swift */; };
 		3BD54C43284FC64C0004EACB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C42284FC64C0004EACB /* SceneDelegate.swift */; };
 		3BD54C45284FC64C0004EACB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C44284FC64C0004EACB /* MainViewController.swift */; };
@@ -23,6 +26,8 @@
 		3B0EC0CF284FCCA200ADDCE5 /* MainViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewInput.swift; sourceTree = "<group>"; };
 		3B0EC0D1284FCCAB00ADDCE5 /* MainViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewOutput.swift; sourceTree = "<group>"; };
 		3B0EC0D3284FCDE700ADDCE5 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		3B0EC0D9284FD69B00ADDCE5 /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
+		3B1418D9284FDEA2001539D5 /* InputCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCellModel.swift; sourceTree = "<group>"; };
 		3BD54C3D284FC64C0004EACB /* NonSpaghettiValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NonSpaghettiValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD54C40284FC64C0004EACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD54C42284FC64C0004EACB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0EC0D7284FD08600ADDCE5 /* ReactiveDataDisplayManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +75,23 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
+		3B0EC0D8284FD68D00ADDCE5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3B1418D7284FDE8D001539D5 /* InputCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3B1418D7284FDE8D001539D5 /* InputCell */ = {
+			isa = PBXGroup;
+			children = (
+				3B0EC0D9284FD69B00ADDCE5 /* InputCell.swift */,
+				3B1418D9284FDEA2001539D5 /* InputCellModel.swift */,
+			);
+			path = InputCell;
+			sourceTree = "<group>";
+		};
 		3BD54C34284FC64C0004EACB = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +111,7 @@
 		3BD54C3F284FC64C0004EACB /* NonSpaghettiValidation */ = {
 			isa = PBXGroup;
 			children = (
+				3B0EC0D8284FD68D00ADDCE5 /* Cells */,
 				3BD54C56284FC84E0004EACB /* Source */,
 				3BD54C55284FC8400004EACB /* Main */,
 				3BD54C54284FC82B0004EACB /* App */,
@@ -140,6 +164,9 @@
 			dependencies = (
 			);
 			name = NonSpaghettiValidation;
+			packageProductDependencies = (
+				3B0EC0D6284FD08600ADDCE5 /* ReactiveDataDisplayManager */,
+			);
 			productName = NonSpaghettiValidation;
 			productReference = 3BD54C3D284FC64C0004EACB /* NonSpaghettiValidation.app */;
 			productType = "com.apple.product-type.application";
@@ -168,6 +195,9 @@
 				Base,
 			);
 			mainGroup = 3BD54C34284FC64C0004EACB;
+			packageReferences = (
+				3B0EC0D5284FD08600ADDCE5 /* XCRemoteSwiftPackageReference "ReactiveDataDisplayManager" */,
+			);
 			productRefGroup = 3BD54C3E284FC64C0004EACB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -196,9 +226,11 @@
 			files = (
 				3B0EC0CE284FCBE000ADDCE5 /* MainBuilder.swift in Sources */,
 				3B0EC0D0284FCCA200ADDCE5 /* MainViewInput.swift in Sources */,
+				3B0EC0DA284FD69B00ADDCE5 /* InputCell.swift in Sources */,
 				3B0EC0D2284FCCAB00ADDCE5 /* MainViewOutput.swift in Sources */,
 				3BD54C45284FC64C0004EACB /* MainViewController.swift in Sources */,
 				3BD54C41284FC64C0004EACB /* AppDelegate.swift in Sources */,
+				3B1418DA284FDEA2001539D5 /* InputCellModel.swift in Sources */,
 				3B0EC0D4284FCDE700ADDCE5 /* MainPresenter.swift in Sources */,
 				3BD54C43284FC64C0004EACB /* SceneDelegate.swift in Sources */,
 			);
@@ -410,6 +442,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3B0EC0D5284FD08600ADDCE5 /* XCRemoteSwiftPackageReference "ReactiveDataDisplayManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/surfstudio/ReactiveDataDisplayManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B0EC0D6284FD08600ADDCE5 /* ReactiveDataDisplayManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B0EC0D5284FD08600ADDCE5 /* XCRemoteSwiftPackageReference "ReactiveDataDisplayManager" */;
+			productName = ReactiveDataDisplayManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3BD54C35284FC64C0004EACB /* Project object */;
 }
