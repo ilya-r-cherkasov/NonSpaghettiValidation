@@ -12,37 +12,60 @@ final class InputCell: UITableViewCell, ConfigurableItem {
     
     // MARK: - Private methods
     
-    private lazy var textFiled = UITextField.make(parentView: contentView)
+    private lazy var textField: UITextField = {
+        let textField = UITextField.make(forCell: self)
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        return textField
+    }()
+    
+    private var model: InputCellModel? {
+        didSet {
+            textField.text = model?.title
+        }
+    }
     
     // MARK: - ConfigurableItem
     
     func configure(with model: InputCellModel) {
-        textFiled.text = model.title
+        self.model = model
     }
     
 }
 
+// MARK: - Actions
+
+extension InputCell {
+    
+    @objc
+    func textFieldDidChange(_ textField: UITextField) {
+        model?.valueChanged?(textField.text ?? "")
+    }
+    
+}
+
+// MARK: - UITextField
+
 private extension UITextField {
     
-    static func make(parentView: UIView) -> UITextField {
+    static func make(forCell cell: UITableViewCell) -> UITextField {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        parentView.addSubview(textField)
+        cell.contentView.addSubview(textField)
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(
-                equalTo: parentView.safeAreaLayoutGuide.topAnchor,
+                equalTo: cell.contentView.safeAreaLayoutGuide.topAnchor,
                 constant: 5
             ),
             textField.leadingAnchor.constraint(
-                equalTo: parentView.safeAreaLayoutGuide.leadingAnchor,
+                equalTo: cell.contentView.safeAreaLayoutGuide.leadingAnchor,
                 constant: 5
             ),
             textField.trailingAnchor.constraint(
-                equalTo: parentView.safeAreaLayoutGuide.trailingAnchor,
+                equalTo: cell.contentView.safeAreaLayoutGuide.trailingAnchor,
                 constant: -5
             ),
             textField.bottomAnchor.constraint(
-                equalTo: parentView.safeAreaLayoutGuide.bottomAnchor,
+                equalTo: cell.contentView.safeAreaLayoutGuide.bottomAnchor,
                 constant: -5
             )
         ])

@@ -39,7 +39,12 @@ private extension MainViewController {
     }
     
     func makeInputGenerator() -> TableCellGenerator {
-        BaseCellGenerator<InputCell>(with: InputCellModel(title: "Hello"), registerType: .class)
+        BaseCellGenerator<InputCell>(
+            with: InputCellModel(title: "Hello") { value in
+                
+            },
+            registerType: .class
+        )
     }
     
 }

@@ -11,4 +11,6 @@ struct InputCellModel {
     
     var title: String
     
+    var valueChanged: ((String) -> ())?
+    
 }
