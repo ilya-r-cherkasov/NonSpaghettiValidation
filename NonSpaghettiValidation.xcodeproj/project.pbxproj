@@ -14,6 +14,18 @@
 		3B0EC0D7284FD08600ADDCE5 /* ReactiveDataDisplayManager in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0EC0D6284FD08600ADDCE5 /* ReactiveDataDisplayManager */; };
 		3B0EC0DA284FD69B00ADDCE5 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EC0D9284FD69B00ADDCE5 /* InputCell.swift */; };
 		3B1418DA284FDEA2001539D5 /* InputCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1418D9284FDEA2001539D5 /* InputCellModel.swift */; };
+		3B99C7AC2850DED100FBED8E /* PupilProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7AB2850DED000FBED8E /* PupilProtocol.swift */; };
+		3B99C7AE2850E94400FBED8E /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7AD2850E94400FBED8E /* ShapeType.swift */; };
+		3B99C7B22850EA8900FBED8E /* Needle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7B12850EA8900FBED8E /* Needle.swift */; };
+		3B99C7B42850EAA100FBED8E /* Trident.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7B32850EAA100FBED8E /* Trident.swift */; };
+		3B99C7B62850EAB000FBED8E /* Knife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7B52850EAB000FBED8E /* Knife.swift */; };
+		3B99C7B92850EAC800FBED8E /* HeliumBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7B82850EAC800FBED8E /* HeliumBalloon.swift */; };
+		3B99C7BB2850EAD700FBED8E /* AirBalloon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7BA2850EAD700FBED8E /* AirBalloon.swift */; };
+		3B99C7BD2850EAE100FBED8E /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7BC2850EAE100FBED8E /* Ball.swift */; };
+		3B99C7C02850EB3300FBED8E /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7BF2850EB3300FBED8E /* Star.swift */; };
+		3B99C7C22850EB3A00FBED8E /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7C12850EB3A00FBED8E /* Moon.swift */; };
+		3B99C7C52850EC7D00FBED8E /* Validable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7C42850EC7D00FBED8E /* Validable.swift */; };
+		3B99C7C82850F15A00FBED8E /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7C72850F15A00FBED8E /* Mediator.swift */; };
 		3BD54C41284FC64C0004EACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C40284FC64C0004EACB /* AppDelegate.swift */; };
 		3BD54C43284FC64C0004EACB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C42284FC64C0004EACB /* SceneDelegate.swift */; };
 		3BD54C45284FC64C0004EACB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C44284FC64C0004EACB /* MainViewController.swift */; };
@@ -28,6 +40,18 @@
 		3B0EC0D3284FCDE700ADDCE5 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		3B0EC0D9284FD69B00ADDCE5 /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		3B1418D9284FDEA2001539D5 /* InputCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCellModel.swift; sourceTree = "<group>"; };
+		3B99C7AB2850DED000FBED8E /* PupilProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupilProtocol.swift; sourceTree = "<group>"; };
+		3B99C7AD2850E94400FBED8E /* ShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
+		3B99C7B12850EA8900FBED8E /* Needle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Needle.swift; sourceTree = "<group>"; };
+		3B99C7B32850EAA100FBED8E /* Trident.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trident.swift; sourceTree = "<group>"; };
+		3B99C7B52850EAB000FBED8E /* Knife.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knife.swift; sourceTree = "<group>"; };
+		3B99C7B82850EAC800FBED8E /* HeliumBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeliumBalloon.swift; sourceTree = "<group>"; };
+		3B99C7BA2850EAD700FBED8E /* AirBalloon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirBalloon.swift; sourceTree = "<group>"; };
+		3B99C7BC2850EAE100FBED8E /* Ball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
+		3B99C7BF2850EB3300FBED8E /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		3B99C7C12850EB3A00FBED8E /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
+		3B99C7C42850EC7D00FBED8E /* Validable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validable.swift; sourceTree = "<group>"; };
+		3B99C7C72850F15A00FBED8E /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
 		3BD54C3D284FC64C0004EACB /* NonSpaghettiValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NonSpaghettiValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD54C40284FC64C0004EACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD54C42284FC64C0004EACB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +116,72 @@
 			path = InputCell;
 			sourceTree = "<group>";
 		};
+		3B99C7AA2850DD8400FBED8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B99C7C62850F11D00FBED8E /* NonDefined */,
+				3B99C7AF2850E9CE00FBED8E /* Pupils */,
+				3B99C7AD2850E94400FBED8E /* ShapeType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3B99C7AF2850E9CE00FBED8E /* Pupils */ = {
+			isa = PBXGroup;
+			children = (
+				3B99C7BE2850EB2500FBED8E /* Neutral */,
+				3B99C7B72850EAB500FBED8E /* Rounded */,
+				3B99C7B02850EA7100FBED8E /* Sharped */,
+			);
+			path = Pupils;
+			sourceTree = "<group>";
+		};
+		3B99C7B02850EA7100FBED8E /* Sharped */ = {
+			isa = PBXGroup;
+			children = (
+				3B99C7B12850EA8900FBED8E /* Needle.swift */,
+				3B99C7B32850EAA100FBED8E /* Trident.swift */,
+				3B99C7B52850EAB000FBED8E /* Knife.swift */,
+			);
+			path = Sharped;
+			sourceTree = "<group>";
+		};
+		3B99C7B72850EAB500FBED8E /* Rounded */ = {
+			isa = PBXGroup;
+			children = (
+				3B99C7B82850EAC800FBED8E /* HeliumBalloon.swift */,
+				3B99C7BA2850EAD700FBED8E /* AirBalloon.swift */,
+				3B99C7BC2850EAE100FBED8E /* Ball.swift */,
+			);
+			path = Rounded;
+			sourceTree = "<group>";
+		};
+		3B99C7BE2850EB2500FBED8E /* Neutral */ = {
+			isa = PBXGroup;
+			children = (
+				3B99C7BF2850EB3300FBED8E /* Star.swift */,
+				3B99C7C12850EB3A00FBED8E /* Moon.swift */,
+			);
+			path = Neutral;
+			sourceTree = "<group>";
+		};
+		3B99C7C32850EBDE00FBED8E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3B99C7AB2850DED000FBED8E /* PupilProtocol.swift */,
+				3B99C7C42850EC7D00FBED8E /* Validable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3B99C7C62850F11D00FBED8E /* NonDefined */ = {
+			isa = PBXGroup;
+			children = (
+				3B99C7C72850F15A00FBED8E /* Mediator.swift */,
+			);
+			path = NonDefined;
+			sourceTree = "<group>";
+		};
 		3BD54C34284FC64C0004EACB = {
 			isa = PBXGroup;
 			children = (
@@ -111,10 +201,10 @@
 		3BD54C3F284FC64C0004EACB /* NonSpaghettiValidation */ = {
 			isa = PBXGroup;
 			children = (
-				3B0EC0D8284FD68D00ADDCE5 /* Cells */,
-				3BD54C56284FC84E0004EACB /* Source */,
 				3BD54C55284FC8400004EACB /* Main */,
+				3B0EC0D8284FD68D00ADDCE5 /* Cells */,
 				3BD54C54284FC82B0004EACB /* App */,
+				3BD54C56284FC84E0004EACB /* Source */,
 				3BD54C4E284FC64F0004EACB /* Info.plist */,
 			);
 			path = NonSpaghettiValidation;
@@ -132,8 +222,10 @@
 		3BD54C55284FC8400004EACB /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3B99C7C32850EBDE00FBED8E /* Protocols */,
 				3B0EC0CC284FCBAD00ADDCE5 /* MainView */,
 				3B0EC0CB284FCB9900ADDCE5 /* MainPresenter */,
+				3B99C7AA2850DD8400FBED8E /* Models */,
 				3B0EC0CA284FCB8B00ADDCE5 /* MainBuilder */,
 			);
 			path = Main;
@@ -228,11 +320,23 @@
 				3B0EC0D0284FCCA200ADDCE5 /* MainViewInput.swift in Sources */,
 				3B0EC0DA284FD69B00ADDCE5 /* InputCell.swift in Sources */,
 				3B0EC0D2284FCCAB00ADDCE5 /* MainViewOutput.swift in Sources */,
+				3B99C7B22850EA8900FBED8E /* Needle.swift in Sources */,
+				3B99C7B62850EAB000FBED8E /* Knife.swift in Sources */,
+				3B99C7C82850F15A00FBED8E /* Mediator.swift in Sources */,
 				3BD54C45284FC64C0004EACB /* MainViewController.swift in Sources */,
+				3B99C7AC2850DED100FBED8E /* PupilProtocol.swift in Sources */,
 				3BD54C41284FC64C0004EACB /* AppDelegate.swift in Sources */,
+				3B99C7C02850EB3300FBED8E /* Star.swift in Sources */,
 				3B1418DA284FDEA2001539D5 /* InputCellModel.swift in Sources */,
+				3B99C7AE2850E94400FBED8E /* ShapeType.swift in Sources */,
+				3B99C7B42850EAA100FBED8E /* Trident.swift in Sources */,
+				3B99C7B92850EAC800FBED8E /* HeliumBalloon.swift in Sources */,
 				3B0EC0D4284FCDE700ADDCE5 /* MainPresenter.swift in Sources */,
+				3B99C7BB2850EAD700FBED8E /* AirBalloon.swift in Sources */,
+				3B99C7C22850EB3A00FBED8E /* Moon.swift in Sources */,
 				3BD54C43284FC64C0004EACB /* SceneDelegate.swift in Sources */,
+				3B99C7C52850EC7D00FBED8E /* Validable.swift in Sources */,
+				3B99C7BD2850EAE100FBED8E /* Ball.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
