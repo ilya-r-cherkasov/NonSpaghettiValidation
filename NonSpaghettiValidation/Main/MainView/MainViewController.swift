@@ -10,6 +10,7 @@ import ReactiveDataDisplayManager
 
 class MainViewController: UIViewController, MainViewInput {
     
+    
     // MARK: - Internal properties
     
     var output: MainViewOutput?
@@ -26,6 +27,18 @@ class MainViewController: UIViewController, MainViewInput {
         view.backgroundColor = .white
         configureTableView()
         configureAdapter()
+        output?.loadData()
+    }
+    
+    func configure(withFileds fields: [InputCellModel]) {
+        fields.forEach {
+            adapter.addCellGenerator(
+                BaseCellGenerator<InputCell>(
+                    with: $0,
+                    registerType: .class
+                )
+            )
+        }
     }
 
 }
@@ -34,18 +47,7 @@ class MainViewController: UIViewController, MainViewInput {
 
 private extension MainViewController {
     
-    func configureAdapter() {
-        adapter.addCellGenerator(makeInputGenerator())
-    }
-    
-    func makeInputGenerator() -> TableCellGenerator {
-        BaseCellGenerator<InputCell>(
-            with: InputCellModel(title: "Hello") { value in
-                
-            },
-            registerType: .class
-        )
-    }
+    func configureAdapter() {}
     
 }
 

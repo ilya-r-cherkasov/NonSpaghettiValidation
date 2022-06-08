@@ -7,4 +7,6 @@
 
 protocol MainViewOutput: AnyObject {
     
+    func loadData()
+    
 }

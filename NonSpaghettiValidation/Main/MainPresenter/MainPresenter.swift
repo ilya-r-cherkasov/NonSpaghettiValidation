@@ -13,4 +13,37 @@ final class MainPresenter: MainViewOutput {
     
     weak var view: MainViewInput?
     
+    // MARK: - Private properties
+    
+    private var pupilList: [PupilProtocol] = [ //тут лучше Set, но надо требовать Hashable
+        Mediator(),
+        Star(),
+        Moon(),
+        HeliumBalloon(),
+        AirBalloon(),
+        Ball(),
+        Needle(),
+        Trident(),
+        Knife()
+    ]
+    
+    // MARK: - MainViewOutput
+    
+    func loadData() {
+        view?.configure(
+            withFileds: pupilList.map {
+                InputCellModel(
+                    title: $0.nickname,
+                    color: $0.color
+                )
+            }
+        )
+    }
+    
+}
+
+private extension MainPresenter {
+    
+    
+    
 }

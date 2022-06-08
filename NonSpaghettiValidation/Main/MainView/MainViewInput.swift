@@ -7,4 +7,6 @@
 
 protocol MainViewInput: AnyObject {
     
+    func configure(withFileds fields: [InputCellModel])
+    
 }

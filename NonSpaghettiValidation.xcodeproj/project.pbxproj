@@ -119,7 +119,6 @@
 		3B99C7AA2850DD8400FBED8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3B99C7C62850F11D00FBED8E /* NonDefined */,
 				3B99C7AF2850E9CE00FBED8E /* Pupils */,
 				3B99C7AD2850E94400FBED8E /* ShapeType.swift */,
 			);
@@ -129,6 +128,7 @@
 		3B99C7AF2850E9CE00FBED8E /* Pupils */ = {
 			isa = PBXGroup;
 			children = (
+				3B99C7C62850F11D00FBED8E /* NonDefined */,
 				3B99C7BE2850EB2500FBED8E /* Neutral */,
 				3B99C7B72850EAB500FBED8E /* Rounded */,
 				3B99C7B02850EA7100FBED8E /* Sharped */,

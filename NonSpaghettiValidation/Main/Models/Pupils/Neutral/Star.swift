@@ -5,4 +5,13 @@
 //  Created by Ilya Cherkasov on 08.06.2022.
 //
 
-import Foundation
+import UIKit
+
+final class Star: PupilProtocol {
+    
+    var shape: ShapeType = .neutral
+    var color: UIColor = .yellow
+    var nickname: String = "Star"
+    var isWantGoTrip: Bool = false
+    
+}

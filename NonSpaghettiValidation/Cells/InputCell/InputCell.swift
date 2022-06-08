@@ -10,17 +10,45 @@ import ReactiveDataDisplayManager
 
 final class InputCell: UITableViewCell, ConfigurableItem {
     
+    // MARK: - Nested types
+    
+    private enum Constants {
+        static let defaultInset: CGFloat = 15
+    }
+    
+    // MARK: - Initialization
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
+        contentView.addSubview(textField)
+        contentView.addSubview(switcher)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Private methods
     
     private lazy var textField: UITextField = {
-        let textField = UITextField.make(forCell: self)
+        let textField = UITextField()
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+//        configureTextFieldConstraints()
         return textField
+    }()
+    
+    private lazy var switcher: UISwitch = {
+        let switcher = UISwitch()
+        switcher.addTarget(self, action: #selector(swicherDidChanged(_:)), for: .valueChanged)
+        //configureSwitcherConstraints()
+        return switcher
     }()
     
     private var model: InputCellModel? {
         didSet {
             textField.text = model?.title
+            backgroundColor = model?.color
         }
     }
     
@@ -28,6 +56,43 @@ final class InputCell: UITableViewCell, ConfigurableItem {
     
     func configure(with model: InputCellModel) {
         self.model = model
+    }
+    
+}
+
+// MARK: - Layout
+
+private extension InputCell {
+    
+    func configureTextFieldConstraints() {
+        NSLayoutConstraint.activate([
+            textField.topAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.topAnchor,
+                constant: Constants.defaultInset
+            ),
+            textField.leadingAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.leadingAnchor,
+                constant: Constants.defaultInset
+            ),
+            textField.trailingAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.trailingAnchor,
+                constant: -Constants.defaultInset
+            ),
+            textField.bottomAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.bottomAnchor,
+                constant: -Constants.defaultInset
+            )
+        ])
+    }
+    
+    func configureSwitcherConstraints() {
+        NSLayoutConstraint.activate([
+            switcher.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
+            switcher.trailingAnchor.constraint(
+                equalTo: contentView.safeAreaLayoutGuide.trailingAnchor,
+                constant: -Constants.defaultInset
+            ),
+        ])
     }
     
 }
@@ -41,35 +106,33 @@ extension InputCell {
         model?.valueChanged?(textField.text ?? "")
     }
     
+    @objc
+    func swicherDidChanged(_ switcher: UISwitch) {
+        
+    }
+    
 }
 
 // MARK: - UITextField
 
 private extension UITextField {
     
-    static func make(forCell cell: UITableViewCell) -> UITextField {
+    static func make() -> UITextField {
         let textField = UITextField()
+        textField.backgroundColor = .clear
+        textField.font = UIFont.systemFont(ofSize: 24)
         textField.translatesAutoresizingMaskIntoConstraints = false
-        cell.contentView.addSubview(textField)
-        NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(
-                equalTo: cell.contentView.safeAreaLayoutGuide.topAnchor,
-                constant: 5
-            ),
-            textField.leadingAnchor.constraint(
-                equalTo: cell.contentView.safeAreaLayoutGuide.leadingAnchor,
-                constant: 5
-            ),
-            textField.trailingAnchor.constraint(
-                equalTo: cell.contentView.safeAreaLayoutGuide.trailingAnchor,
-                constant: -5
-            ),
-            textField.bottomAnchor.constraint(
-                equalTo: cell.contentView.safeAreaLayoutGuide.bottomAnchor,
-                constant: -5
-            )
-        ])
         return textField
+    }
+    
+}
+
+private extension UISwitch {
+    
+    static func make() -> UISwitch {
+        let switcher = UISwitch()
+        switcher.translatesAutoresizingMaskIntoConstraints = false
+        return switcher
     }
     
 }

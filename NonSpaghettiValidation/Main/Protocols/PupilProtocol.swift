@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PupilProtocol {
+protocol PupilProtocol: AnyObject {
     
     var shape: ShapeType { get set }
     var color: UIColor { get set }
