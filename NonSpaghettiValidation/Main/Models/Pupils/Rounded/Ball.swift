@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class Ball: PupilProtocol {
+final class Ball: Pupil {
     
-    weak var delegate: PupilDelegate?
+    weak var pupilListProvider: PupilListProvider?
     var shape: ShapeType = .rounded
     var color: UIColor = .white
     var nickname: String = "Ball"

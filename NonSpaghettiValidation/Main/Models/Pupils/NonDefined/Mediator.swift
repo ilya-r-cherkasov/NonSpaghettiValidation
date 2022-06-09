@@ -7,11 +7,11 @@
 
 import UIKit
 
-final class Mediator: PupilProtocol {
+final class Mediator: Pupil {
     
     // MARK: - Internal properties
     
-    weak var delegate: PupilDelegate?
+    weak var pupilListProvider: PupilListProvider?
     var shape: ShapeType = .nonDefined
     var nickname: String = "Mediator"
     var color: UIColor = .white

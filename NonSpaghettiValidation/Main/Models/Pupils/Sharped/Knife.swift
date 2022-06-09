@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class Knife: PupilProtocol {
+final class Knife: Pupil {
     
-    weak var delegate: PupilDelegate?
+    weak var pupilListProvider: PupilListProvider?
     var shape: ShapeType = .sharp
     var color: UIColor = .green
     var nickname: String = "Knife"

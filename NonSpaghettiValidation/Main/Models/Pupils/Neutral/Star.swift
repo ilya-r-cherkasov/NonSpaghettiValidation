@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class Star: PupilProtocol {
+final class Star: Pupil {
     
-    weak var delegate: PupilDelegate?
+    weak var pupilListProvider: PupilListProvider?
     var shape: ShapeType = .neutral
     var color: UIColor = .yellow
     var nickname: String = "Star"

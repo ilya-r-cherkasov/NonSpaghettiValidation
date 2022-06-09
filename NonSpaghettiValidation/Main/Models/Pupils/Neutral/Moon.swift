@@ -7,12 +7,16 @@
 
 import UIKit
 
-final class Moon: PupilProtocol {    
+final class Moon: Pupil {    
     
-    weak var delegate: PupilDelegate?
+    weak var pupilListProvider: PupilListProvider?
     var shape: ShapeType = .neutral
     var color: UIColor = .white
     var nickname: String = "Moon"
     var isWantGoTrip: Bool = false
+    
+    func haveNoConflict(with pupil: Pupil) -> Bool {
+        pupil is Star ? pupil.isWantGoTrip != true : true
+    }
     
 }

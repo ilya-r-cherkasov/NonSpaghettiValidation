@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MainPresenter: MainViewOutput, PupilDelegate {
+final class MainPresenter: MainViewOutput {
     
     // MARK: - Internal properties
     
@@ -15,28 +15,27 @@ final class MainPresenter: MainViewOutput, PupilDelegate {
     
     // MARK: - Private properties
     
-    
-    // TODO: тут лучше Set, но надо требовать Hashable
-    lazy var pupilList: [PupilProtocol] = [
-        Mediator(),
-        Star(),
-        Moon(),
-        HeliumBalloon(),
-        AirBalloon(),
-        Ball(),
-        Needle(),
-        Trident(),
-        Knife()
-    ]
+    private lazy var teacher: Teacher = {
+        Teacher.make(with: [
+            Mediator(),
+            Star(),
+            Moon(),
+            HeliumBalloon(),
+            AirBalloon(),
+            Ball(),
+            Needle(),
+            Trident(),
+            Knife()
+        ])
+    }()
     
     // MARK: - MainViewOutput
     
     func viewDidLoad() {
         // TODO: Retain cycle может быть в теории, надо подумать
-        pupilList.forEach { $0.delegate = self }
         
         view?.configure(
-            withFileds: pupilList.map { pupil in
+            withFileds: teacher.pupilList.map { pupil in
                 var model = InputCellModel(
                     nickname: pupil.nickname,
                     color: pupil.color
@@ -53,7 +52,8 @@ final class MainPresenter: MainViewOutput, PupilDelegate {
     }
     
     func nextButtonTapped() {
-        print(pupilList)
+        let isNoConflict = teacher.startSurvey()
+        print(isNoConflict)
     }
     
 }
