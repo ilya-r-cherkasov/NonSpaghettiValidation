@@ -7,6 +7,7 @@
 
 protocol MainViewOutput: AnyObject {
     
-    func loadData()
+    func viewDidLoad()
+    func nextButtonTapped()
     
 }

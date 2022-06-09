@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: Просочился UIKit :( но боюсь, другой способ держать цвет будет не оч
+
 protocol PupilProtocol: AnyObject {
     
     var shape: ShapeType { get set }

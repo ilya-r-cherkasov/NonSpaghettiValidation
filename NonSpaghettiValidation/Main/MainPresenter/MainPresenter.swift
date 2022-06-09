@@ -15,7 +15,9 @@ final class MainPresenter: MainViewOutput {
     
     // MARK: - Private properties
     
-    private var pupilList: [PupilProtocol] = [ //тут лучше Set, но надо требовать Hashable
+    
+    // TODO: тут лучше Set, но надо требовать Hashable
+    private var pupilList: [PupilProtocol] = [
         Mediator(),
         Star(),
         Moon(),
@@ -29,21 +31,26 @@ final class MainPresenter: MainViewOutput {
     
     // MARK: - MainViewOutput
     
-    func loadData() {
+    func viewDidLoad() {
         view?.configure(
-            withFileds: pupilList.map {
-                InputCellModel(
-                    title: $0.nickname,
-                    color: $0.color
+            withFileds: pupilList.map { pupil in
+                var model = InputCellModel(
+                    nickname: pupil.nickname,
+                    color: pupil.color
                 )
+                model.nicknameChanged = { [weak pupil] nickname in
+                    pupil?.nickname = nickname
+                }
+                model.goTripStatusChanged = { [weak pupil] isWantGoTrip in
+                    pupil?.isWantGoTrip = isWantGoTrip
+                }
+                return model
             }
         )
     }
     
-}
-
-private extension MainPresenter {
-    
-    
+    func nextButtonTapped() {
+        print(pupilList)
+    }
     
 }

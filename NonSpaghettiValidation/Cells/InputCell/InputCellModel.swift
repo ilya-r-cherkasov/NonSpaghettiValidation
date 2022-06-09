@@ -9,9 +9,10 @@ import UIKit
 
 struct InputCellModel {
     
-    var title: String
+    var nickname: String
     var color: UIColor
     
-    var valueChanged: ((String) -> ())?
+    var nicknameChanged: ((String) -> ())?
+    var goTripStatusChanged: ((Bool) -> ())?
     
 }

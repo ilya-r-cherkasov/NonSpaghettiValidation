@@ -19,6 +19,7 @@ class MainViewController: UIViewController, MainViewInput {
     
     private lazy var tableView = UITableView()
     private lazy var adapter = tableView.rddm.baseBuilder.build()
+    private var nextButton = UIButton()
     
     // MARK: - UIViewController
 
@@ -26,11 +27,12 @@ class MainViewController: UIViewController, MainViewInput {
         super.viewDidLoad()
         view.backgroundColor = .white
         configureTableView()
-        configureAdapter()
-        output?.loadData()
+        configureNextButton()
+        output?.viewDidLoad()
     }
     
     func configure(withFileds fields: [InputCellModel]) {
+        // TODO: - Не ок датафлоу, сразу в презентере есть доступ к UI. Можно тут же изготовлять генераторы
         fields.forEach {
             adapter.addCellGenerator(
                 BaseCellGenerator<InputCell>(
@@ -43,11 +45,14 @@ class MainViewController: UIViewController, MainViewInput {
 
 }
 
-// MARK: - Adapter
+// MARK: - Actions
 
 private extension MainViewController {
     
-    func configureAdapter() {}
+    @objc
+    func nextButtonTapped(_ button: UIButton) {
+        output?.nextButtonTapped()
+    }
     
 }
 
@@ -63,6 +68,19 @@ private extension MainViewController {
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    func configureNextButton() {
+        view.addSubview(nextButton)
+        nextButton.setTitle("Вывести лог", for: .normal)
+        nextButton.setTitleColor(.blue, for: .normal)
+        nextButton.addTarget(self, action: #selector(nextButtonTapped(_:)), for: .touchUpInside)
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            nextButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            nextButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     

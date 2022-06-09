@@ -23,6 +23,8 @@ final class InputCell: UITableViewCell, ConfigurableItem {
         selectionStyle = .none
         contentView.addSubview(textField)
         contentView.addSubview(switcher)
+        configureTextFieldConstraints()
+        configureSwitcherConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -32,22 +34,20 @@ final class InputCell: UITableViewCell, ConfigurableItem {
     // MARK: - Private methods
     
     private lazy var textField: UITextField = {
-        let textField = UITextField()
+        let textField = UITextField.make()
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-//        configureTextFieldConstraints()
         return textField
     }()
     
     private lazy var switcher: UISwitch = {
-        let switcher = UISwitch()
+        let switcher = UISwitch.make()
         switcher.addTarget(self, action: #selector(swicherDidChanged(_:)), for: .valueChanged)
-        //configureSwitcherConstraints()
         return switcher
     }()
     
     private var model: InputCellModel? {
         didSet {
-            textField.text = model?.title
+            textField.text = model?.nickname
             backgroundColor = model?.color
         }
     }
@@ -103,12 +103,12 @@ extension InputCell {
     
     @objc
     func textFieldDidChange(_ textField: UITextField) {
-        model?.valueChanged?(textField.text ?? "")
+        model?.nicknameChanged?(textField.text ?? "")
     }
     
     @objc
     func swicherDidChanged(_ switcher: UISwitch) {
-        
+        model?.goTripStatusChanged?(switcher.isOn)
     }
     
 }
