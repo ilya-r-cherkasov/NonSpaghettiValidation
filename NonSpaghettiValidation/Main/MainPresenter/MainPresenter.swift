@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MainPresenter: MainViewOutput {
+final class MainPresenter: MainViewOutput, PupilDelegate {
     
     // MARK: - Internal properties
     
@@ -17,7 +17,7 @@ final class MainPresenter: MainViewOutput {
     
     
     // TODO: тут лучше Set, но надо требовать Hashable
-    private var pupilList: [PupilProtocol] = [
+    lazy var pupilList: [PupilProtocol] = [
         Mediator(),
         Star(),
         Moon(),
@@ -32,6 +32,9 @@ final class MainPresenter: MainViewOutput {
     // MARK: - MainViewOutput
     
     func viewDidLoad() {
+        // TODO: Retain cycle может быть в теории, надо подумать
+        pupilList.forEach { $0.delegate = self }
+        
         view?.configure(
             withFileds: pupilList.map { pupil in
                 var model = InputCellModel(

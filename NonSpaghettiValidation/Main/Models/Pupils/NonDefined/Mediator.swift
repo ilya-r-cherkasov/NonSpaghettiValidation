@@ -11,6 +11,7 @@ final class Mediator: PupilProtocol {
     
     // MARK: - Internal properties
     
+    weak var delegate: PupilDelegate?
     var shape: ShapeType = .nonDefined
     var nickname: String = "Mediator"
     var color: UIColor = .white

@@ -26,6 +26,7 @@
 		3B99C7C22850EB3A00FBED8E /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7C12850EB3A00FBED8E /* Moon.swift */; };
 		3B99C7C52850EC7D00FBED8E /* Validable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7C42850EC7D00FBED8E /* Validable.swift */; };
 		3B99C7C82850F15A00FBED8E /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7C72850F15A00FBED8E /* Mediator.swift */; };
+		3B9F4B2C28523F86007AACC2 /* RulePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B2B28523F86007AACC2 /* RulePriority.swift */; };
 		3BD54C41284FC64C0004EACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C40284FC64C0004EACB /* AppDelegate.swift */; };
 		3BD54C43284FC64C0004EACB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C42284FC64C0004EACB /* SceneDelegate.swift */; };
 		3BD54C45284FC64C0004EACB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C44284FC64C0004EACB /* MainViewController.swift */; };
@@ -52,6 +53,7 @@
 		3B99C7C12850EB3A00FBED8E /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		3B99C7C42850EC7D00FBED8E /* Validable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validable.swift; sourceTree = "<group>"; };
 		3B99C7C72850F15A00FBED8E /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
+		3B9F4B2B28523F86007AACC2 /* RulePriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulePriority.swift; sourceTree = "<group>"; };
 		3BD54C3D284FC64C0004EACB /* NonSpaghettiValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NonSpaghettiValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD54C40284FC64C0004EACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD54C42284FC64C0004EACB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,22 @@
 			path = NonDefined;
 			sourceTree = "<group>";
 		};
+		3B9F4B2928523F6C007AACC2 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				3B9F4B2A28523F76007AACC2 /* Rule */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		3B9F4B2A28523F76007AACC2 /* Rule */ = {
+			isa = PBXGroup;
+			children = (
+				3B9F4B2B28523F86007AACC2 /* RulePriority.swift */,
+			);
+			path = Rule;
+			sourceTree = "<group>";
+		};
 		3BD54C34284FC64C0004EACB = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +240,7 @@
 		3BD54C55284FC8400004EACB /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3B9F4B2928523F6C007AACC2 /* Validation */,
 				3B99C7C32850EBDE00FBED8E /* Protocols */,
 				3B0EC0CC284FCBAD00ADDCE5 /* MainView */,
 				3B0EC0CB284FCB9900ADDCE5 /* MainPresenter */,
@@ -327,6 +346,7 @@
 				3B99C7AC2850DED100FBED8E /* PupilProtocol.swift in Sources */,
 				3BD54C41284FC64C0004EACB /* AppDelegate.swift in Sources */,
 				3B99C7C02850EB3300FBED8E /* Star.swift in Sources */,
+				3B9F4B2C28523F86007AACC2 /* RulePriority.swift in Sources */,
 				3B1418DA284FDEA2001539D5 /* InputCellModel.swift in Sources */,
 				3B99C7AE2850E94400FBED8E /* ShapeType.swift in Sources */,
 				3B99C7B42850EAA100FBED8E /* Trident.swift in Sources */,

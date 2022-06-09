@@ -9,6 +9,7 @@ import UIKit
 
 final class Trident: PupilProtocol {
     
+    weak var delegate: PupilDelegate?
     var shape: ShapeType = .sharp
     var color: UIColor = .white
     var nickname: String = "Trident"

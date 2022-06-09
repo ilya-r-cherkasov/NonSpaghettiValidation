@@ -9,6 +9,7 @@ import UIKit
 
 final class HeliumBalloon: PupilProtocol {
     
+    weak var delegate: PupilDelegate?
     var shape: ShapeType = .rounded
     var color: UIColor = .white
     var nickname: String = "HeliumBalloon"

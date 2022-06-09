@@ -9,6 +9,7 @@ import UIKit
 
 final class Knife: PupilProtocol {
     
+    weak var delegate: PupilDelegate?
     var shape: ShapeType = .sharp
     var color: UIColor = .green
     var nickname: String = "Knife"

@@ -9,6 +9,7 @@ import UIKit
 
 final class Ball: PupilProtocol {
     
+    weak var delegate: PupilDelegate?
     var shape: ShapeType = .rounded
     var color: UIColor = .white
     var nickname: String = "Ball"

@@ -9,6 +9,7 @@ import UIKit
 
 final class Star: PupilProtocol {
     
+    weak var delegate: PupilDelegate?
     var shape: ShapeType = .neutral
     var color: UIColor = .yellow
     var nickname: String = "Star"

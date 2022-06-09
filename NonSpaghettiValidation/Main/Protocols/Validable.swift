@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+protocol Validable {
+    
+    func getOwnRules() -> [Rule] 
+    
+}
+
+extension Validable {
+    func getOwnRules() -> [Rule] {
+        []
+    }
+}
+
+struct Rule {
+    
+}

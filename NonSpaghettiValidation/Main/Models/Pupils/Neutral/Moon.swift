@@ -9,6 +9,7 @@ import UIKit
 
 final class Moon: PupilProtocol {    
     
+    weak var delegate: PupilDelegate?
     var shape: ShapeType = .neutral
     var color: UIColor = .white
     var nickname: String = "Moon"
