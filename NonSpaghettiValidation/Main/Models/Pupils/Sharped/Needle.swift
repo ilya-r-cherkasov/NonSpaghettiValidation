@@ -9,7 +9,7 @@ import UIKit
 
 final class Needle: Pupil {
     
-    weak var pupilListProvider: PupilListProvider?
+    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
     var shape: ShapeType = .sharp
     var color: UIColor = .white
     var nickname: String = "Needle"

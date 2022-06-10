@@ -1,34 +1,36 @@
 //
-//  Teacher.swift
+//  Referee.swift
 //  NonSpaghettiValidation
 //
 //  Created by Ilya Cherkasov on 09.06.2022.
 //
 
-final class Teacher: PupilListProvider {
+typealias Teacher = Referee
+
+final class Referee: SurveyableObjectsProvider {
     
     // MARK: - Static functions
     
-    static func make(with pupilList: [Pupil]) -> Teacher {
-        Teacher(pupilList: pupilList)
+    static func make(with surveyableObjects: [Surveyable]) -> Referee {
+        Referee(surveyableObjects: surveyableObjects)
             .configure()
     }
     
     // MARK: - Initialization
     
-    private init(pupilList: [Pupil]) {
-        self.pupilList = pupilList
+    private init(surveyableObjects: [Surveyable]) {
+        self.surveyableObjects = surveyableObjects
     }
     
     // MARK: - Internal properties
     
     // TODO: тут лучше Set, но надо требовать Hashable
-    private(set) var pupilList: [Pupil]
+    private(set) var surveyableObjects: [Surveyable]
     
     // MARK: - Methods
     
     func startSurvey() -> Bool {
-        pupilList.reduce(true) {
+        surveyableObjects.reduce(true) {
             $0 && $1.checkYourself() && $1.askOther()
         }
     }
@@ -37,10 +39,10 @@ final class Teacher: PupilListProvider {
 
 // MARK: - Private functions
 
-private extension Teacher {
+private extension Referee {
     
-    func configure() -> Teacher {
-        pupilList.forEach { $0.pupilListProvider = self }
+    func configure() -> Referee {
+        surveyableObjects.forEach { $0.surveyableObjectsProvider = self }
         return self
     }
     

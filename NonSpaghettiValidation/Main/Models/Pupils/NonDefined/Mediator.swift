@@ -11,7 +11,7 @@ final class Mediator: Pupil {
     
     // MARK: - Internal properties
     
-    weak var pupilListProvider: PupilListProvider?
+    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
     var shape: ShapeType = .nonDefined
     var nickname: String = "Mediator"
     var color: UIColor = .white

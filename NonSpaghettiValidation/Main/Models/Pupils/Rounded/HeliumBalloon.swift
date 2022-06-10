@@ -9,7 +9,7 @@ import UIKit
 
 final class HeliumBalloon: Pupil {
     
-    weak var pupilListProvider: PupilListProvider?
+    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
     var shape: ShapeType = .rounded
     var color: UIColor = .white
     var nickname: String = "HeliumBalloon"

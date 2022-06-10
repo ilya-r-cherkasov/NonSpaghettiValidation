@@ -30,7 +30,9 @@
 		3B9F4B2F285272E3007AACC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B2E285272E3007AACC2 /* Validator.swift */; };
 		3B9F4B3128527304007AACC2 /* ValidationRuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B3028527304007AACC2 /* ValidationRuleProtocol.swift */; };
 		3B9F4B34285278B3007AACC2 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B33285278B3007AACC2 /* Teacher.swift */; };
-		3B9F4B3628527CB6007AACC2 /* PupilListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B3528527CB6007AACC2 /* PupilListProvider.swift */; };
+		3B9F4B3628527CB6007AACC2 /* SurveyableObjectsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B3528527CB6007AACC2 /* SurveyableObjectsProvider.swift */; };
+		3B9F4B382853678F007AACC2 /* Surveyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B372853678F007AACC2 /* Surveyable.swift */; };
+		3B9F4B3C28536B16007AACC2 /* ViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B3B28536B16007AACC2 /* ViewRepresentable.swift */; };
 		3BD54C41284FC64C0004EACB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C40284FC64C0004EACB /* AppDelegate.swift */; };
 		3BD54C43284FC64C0004EACB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C42284FC64C0004EACB /* SceneDelegate.swift */; };
 		3BD54C45284FC64C0004EACB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD54C44284FC64C0004EACB /* MainViewController.swift */; };
@@ -61,7 +63,9 @@
 		3B9F4B2E285272E3007AACC2 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		3B9F4B3028527304007AACC2 /* ValidationRuleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRuleProtocol.swift; sourceTree = "<group>"; };
 		3B9F4B33285278B3007AACC2 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
-		3B9F4B3528527CB6007AACC2 /* PupilListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PupilListProvider.swift; sourceTree = "<group>"; };
+		3B9F4B3528527CB6007AACC2 /* SurveyableObjectsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyableObjectsProvider.swift; sourceTree = "<group>"; };
+		3B9F4B372853678F007AACC2 /* Surveyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surveyable.swift; sourceTree = "<group>"; };
+		3B9F4B3B28536B16007AACC2 /* ViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRepresentable.swift; sourceTree = "<group>"; };
 		3BD54C3D284FC64C0004EACB /* NonSpaghettiValidation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NonSpaghettiValidation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD54C40284FC64C0004EACB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD54C42284FC64C0004EACB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,10 +182,10 @@
 		3B99C7C32850EBDE00FBED8E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				3B9F4B3028527304007AACC2 /* ValidationRuleProtocol.swift */,
+				3B9F4B3D28536B82007AACC2 /* ViewRepresentable */,
+				3B9F4B3A285367C5007AACC2 /* Validation */,
+				3B9F4B39285367A4007AACC2 /* Survey */,
 				3B99C7AB2850DED000FBED8E /* Pupil.swift */,
-				3B9F4B3528527CB6007AACC2 /* PupilListProvider.swift */,
-				3B99C7C42850EC7D00FBED8E /* Validable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -225,6 +229,32 @@
 				3B9F4B33285278B3007AACC2 /* Teacher.swift */,
 			);
 			path = Teacher;
+			sourceTree = "<group>";
+		};
+		3B9F4B39285367A4007AACC2 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				3B9F4B372853678F007AACC2 /* Surveyable.swift */,
+				3B9F4B3528527CB6007AACC2 /* SurveyableObjectsProvider.swift */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		3B9F4B3A285367C5007AACC2 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				3B9F4B3028527304007AACC2 /* ValidationRuleProtocol.swift */,
+				3B99C7C42850EC7D00FBED8E /* Validable.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		3B9F4B3D28536B82007AACC2 /* ViewRepresentable */ = {
+			isa = PBXGroup;
+			children = (
+				3B9F4B3B28536B16007AACC2 /* ViewRepresentable.swift */,
+			);
+			path = ViewRepresentable;
 			sourceTree = "<group>";
 		};
 		3BD54C34284FC64C0004EACB = {
@@ -372,6 +402,7 @@
 				3B99C7B62850EAB000FBED8E /* Knife.swift in Sources */,
 				3B99C7C82850F15A00FBED8E /* Mediator.swift in Sources */,
 				3BD54C45284FC64C0004EACB /* MainViewController.swift in Sources */,
+				3B9F4B382853678F007AACC2 /* Surveyable.swift in Sources */,
 				3B99C7AC2850DED100FBED8E /* Pupil.swift in Sources */,
 				3BD54C41284FC64C0004EACB /* AppDelegate.swift in Sources */,
 				3B99C7C02850EB3300FBED8E /* Star.swift in Sources */,
@@ -379,8 +410,9 @@
 				3B1418DA284FDEA2001539D5 /* InputCellModel.swift in Sources */,
 				3B99C7AE2850E94400FBED8E /* ShapeType.swift in Sources */,
 				3B99C7B42850EAA100FBED8E /* Trident.swift in Sources */,
+				3B9F4B3C28536B16007AACC2 /* ViewRepresentable.swift in Sources */,
 				3B9F4B34285278B3007AACC2 /* Teacher.swift in Sources */,
-				3B9F4B3628527CB6007AACC2 /* PupilListProvider.swift in Sources */,
+				3B9F4B3628527CB6007AACC2 /* SurveyableObjectsProvider.swift in Sources */,
 				3B99C7B92850EAC800FBED8E /* HeliumBalloon.swift in Sources */,
 				3B0EC0D4284FCDE700ADDCE5 /* MainPresenter.swift in Sources */,
 				3B99C7BB2850EAD700FBED8E /* AirBalloon.swift in Sources */,

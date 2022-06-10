@@ -9,7 +9,7 @@ import UIKit
 
 final class Star: Pupil {
     
-    weak var pupilListProvider: PupilListProvider?
+    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
     var shape: ShapeType = .neutral
     var color: UIColor = .yellow
     var nickname: String = "Star"

@@ -9,7 +9,7 @@ import UIKit
 
 final class Knife: Pupil {
     
-    weak var pupilListProvider: PupilListProvider?
+    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
     var shape: ShapeType = .sharp
     var color: UIColor = .green
     var nickname: String = "Knife"

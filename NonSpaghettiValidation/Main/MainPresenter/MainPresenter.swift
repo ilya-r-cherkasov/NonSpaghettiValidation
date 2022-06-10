@@ -32,10 +32,10 @@ final class MainPresenter: MainViewOutput {
     // MARK: - MainViewOutput
     
     func viewDidLoad() {
-        // TODO: Retain cycle может быть в теории, надо подумать
-        
         view?.configure(
-            withFileds: teacher.pupilList.map { pupil in
+            withFileds: teacher.surveyableObjects
+                .compactMap { $0 as? ViewRepresentable }
+                .map { pupil in
                 var model = InputCellModel(
                     nickname: pupil.nickname,
                     color: pupil.color

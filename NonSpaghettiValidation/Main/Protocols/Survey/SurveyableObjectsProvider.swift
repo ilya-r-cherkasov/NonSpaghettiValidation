@@ -5,8 +5,8 @@
 //  Created by Ilya Cherkasov on 09.06.2022.
 //
 
-protocol PupilListProvider: AnyObject {
+protocol SurveyableObjectsProvider: AnyObject {
     
-    var pupilList: [Pupil] { get }
+    var surveyableObjects: [Surveyable] { get }
     
 }
