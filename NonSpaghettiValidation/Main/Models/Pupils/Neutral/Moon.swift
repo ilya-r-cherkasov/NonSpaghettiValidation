@@ -11,12 +11,16 @@ final class Moon: Pupil {
     
     var validator: Validator {
         Validator(rules: [
-            DefaultRule(priority: .medium, tag: "MoonRule") { pupil in
+            DefaultRule(
+                priority: .medium,
+                tag: RuleTagger.starShouldBeInTrip.rawValue
+            ) { [weak self] pupil in
                 guard pupil is Star,
-                      let pupil = pupil as? ViewRepresentable else {
+                      let pupil = pupil as? ViewRepresentable,
+                      let self = self else {
                     return true
                 }
-                return pupil.isWantGoTrip != true
+                return pupil.isWantGoTrip && self.isWantGoTrip
             }
         ])
     }

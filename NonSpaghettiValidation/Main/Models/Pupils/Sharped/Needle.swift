@@ -15,4 +15,8 @@ final class Needle: Pupil {
     var nickname: String = "Needle"
     var isWantGoTrip: Bool = false
     
+    func checkYourself() -> [Conflict] {
+        isWantGoTrip ? [] : [DummyConflict(tag: "Needle non active", priority: .medium)]
+    }
+    
 }
