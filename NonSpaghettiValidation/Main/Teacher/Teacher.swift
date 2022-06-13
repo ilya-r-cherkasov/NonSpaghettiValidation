@@ -29,9 +29,9 @@ final class Referee: SurveyableObjectsProvider {
     
     // MARK: - Methods
     
-    func startSurvey() -> Bool {
-        surveyableObjects.reduce(true) {
-            $0 && $1.checkYourself() && $1.askOther()
+    func startSurvey() -> [Conflict] {
+        surveyableObjects.reduce([Conflict]()) {
+            $0 + $1.checkYourself() + $1.askOther()
         }
     }
         

@@ -52,8 +52,8 @@ final class MainPresenter: MainViewOutput {
     }
     
     func nextButtonTapped() {
-        let isNoConflict = teacher.startSurvey()
-        print(isNoConflict)
+        let conficts = teacher.startSurvey()
+        print(conficts.isEmpty)
     }
     
 }

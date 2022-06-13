@@ -9,12 +9,14 @@ import Foundation
 
 protocol Validable {
     
-    func getOwnRules() -> [ValidationRuleProtocol]
+    var validator: Validator { get }
     
 }
 
 extension Validable {
-    func getOwnRules() -> [ValidationRuleProtocol] {
-        []
+        
+    var validator: Validator {
+        Validator(rules: [])
     }
+    
 }

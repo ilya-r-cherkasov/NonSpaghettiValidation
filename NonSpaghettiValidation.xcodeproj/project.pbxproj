@@ -14,6 +14,7 @@
 		3B0EC0D7284FD08600ADDCE5 /* ReactiveDataDisplayManager in Frameworks */ = {isa = PBXBuildFile; productRef = 3B0EC0D6284FD08600ADDCE5 /* ReactiveDataDisplayManager */; };
 		3B0EC0DA284FD69B00ADDCE5 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0EC0D9284FD69B00ADDCE5 /* InputCell.swift */; };
 		3B1418DA284FDEA2001539D5 /* InputCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1418D9284FDEA2001539D5 /* InputCellModel.swift */; };
+		3B28856C2854E7F700B7B686 /* Conflict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B28856B2854E7F700B7B686 /* Conflict.swift */; };
 		3B99C7AC2850DED100FBED8E /* Pupil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7AB2850DED000FBED8E /* Pupil.swift */; };
 		3B99C7AE2850E94400FBED8E /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7AD2850E94400FBED8E /* ShapeType.swift */; };
 		3B99C7B22850EA8900FBED8E /* Needle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7B12850EA8900FBED8E /* Needle.swift */; };
@@ -28,7 +29,7 @@
 		3B99C7C82850F15A00FBED8E /* Mediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B99C7C72850F15A00FBED8E /* Mediator.swift */; };
 		3B9F4B2C28523F86007AACC2 /* RulePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B2B28523F86007AACC2 /* RulePriority.swift */; };
 		3B9F4B2F285272E3007AACC2 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B2E285272E3007AACC2 /* Validator.swift */; };
-		3B9F4B3128527304007AACC2 /* ValidationRuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B3028527304007AACC2 /* ValidationRuleProtocol.swift */; };
+		3B9F4B3128527304007AACC2 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B3028527304007AACC2 /* Rule.swift */; };
 		3B9F4B34285278B3007AACC2 /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B33285278B3007AACC2 /* Teacher.swift */; };
 		3B9F4B3628527CB6007AACC2 /* SurveyableObjectsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B3528527CB6007AACC2 /* SurveyableObjectsProvider.swift */; };
 		3B9F4B382853678F007AACC2 /* Surveyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9F4B372853678F007AACC2 /* Surveyable.swift */; };
@@ -47,6 +48,7 @@
 		3B0EC0D3284FCDE700ADDCE5 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		3B0EC0D9284FD69B00ADDCE5 /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		3B1418D9284FDEA2001539D5 /* InputCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCellModel.swift; sourceTree = "<group>"; };
+		3B28856B2854E7F700B7B686 /* Conflict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conflict.swift; sourceTree = "<group>"; };
 		3B99C7AB2850DED000FBED8E /* Pupil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pupil.swift; sourceTree = "<group>"; };
 		3B99C7AD2850E94400FBED8E /* ShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
 		3B99C7B12850EA8900FBED8E /* Needle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Needle.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		3B99C7C72850F15A00FBED8E /* Mediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mediator.swift; sourceTree = "<group>"; };
 		3B9F4B2B28523F86007AACC2 /* RulePriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulePriority.swift; sourceTree = "<group>"; };
 		3B9F4B2E285272E3007AACC2 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
-		3B9F4B3028527304007AACC2 /* ValidationRuleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRuleProtocol.swift; sourceTree = "<group>"; };
+		3B9F4B3028527304007AACC2 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		3B9F4B33285278B3007AACC2 /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		3B9F4B3528527CB6007AACC2 /* SurveyableObjectsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyableObjectsProvider.swift; sourceTree = "<group>"; };
 		3B9F4B372853678F007AACC2 /* Surveyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surveyable.swift; sourceTree = "<group>"; };
@@ -130,6 +132,22 @@
 			path = InputCell;
 			sourceTree = "<group>";
 		};
+		3B7550452857341900A4AC41 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3B9F4B3028527304007AACC2 /* Rule.swift */,
+				3B99C7C42850EC7D00FBED8E /* Validable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3B7550462857405300A4AC41 /* RuleTag */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RuleTag;
+			sourceTree = "<group>";
+		};
 		3B99C7AA2850DD8400FBED8E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				3B9F4B3D28536B82007AACC2 /* ViewRepresentable */,
-				3B9F4B3A285367C5007AACC2 /* Validation */,
 				3B9F4B39285367A4007AACC2 /* Survey */,
 				3B99C7AB2850DED000FBED8E /* Pupil.swift */,
 			);
@@ -201,18 +218,20 @@
 		3B9F4B2928523F6C007AACC2 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				3B7550462857405300A4AC41 /* RuleTag */,
+				3B7550452857341900A4AC41 /* Protocols */,
 				3B9F4B2D285272D3007AACC2 /* Validator */,
-				3B9F4B2A28523F76007AACC2 /* Rules */,
+				3B9F4B2A28523F76007AACC2 /* RulePriority */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
 		};
-		3B9F4B2A28523F76007AACC2 /* Rules */ = {
+		3B9F4B2A28523F76007AACC2 /* RulePriority */ = {
 			isa = PBXGroup;
 			children = (
 				3B9F4B2B28523F86007AACC2 /* RulePriority.swift */,
 			);
-			path = Rules;
+			path = RulePriority;
 			sourceTree = "<group>";
 		};
 		3B9F4B2D285272D3007AACC2 /* Validator */ = {
@@ -236,17 +255,9 @@
 			children = (
 				3B9F4B372853678F007AACC2 /* Surveyable.swift */,
 				3B9F4B3528527CB6007AACC2 /* SurveyableObjectsProvider.swift */,
+				3B28856B2854E7F700B7B686 /* Conflict.swift */,
 			);
 			path = Survey;
-			sourceTree = "<group>";
-		};
-		3B9F4B3A285367C5007AACC2 /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-				3B9F4B3028527304007AACC2 /* ValidationRuleProtocol.swift */,
-				3B99C7C42850EC7D00FBED8E /* Validable.swift */,
-			);
-			path = Validation;
 			sourceTree = "<group>";
 		};
 		3B9F4B3D28536B82007AACC2 /* ViewRepresentable */ = {
@@ -398,6 +409,7 @@
 				3B0EC0DA284FD69B00ADDCE5 /* InputCell.swift in Sources */,
 				3B0EC0D2284FCCAB00ADDCE5 /* MainViewOutput.swift in Sources */,
 				3B99C7B22850EA8900FBED8E /* Needle.swift in Sources */,
+				3B28856C2854E7F700B7B686 /* Conflict.swift in Sources */,
 				3B9F4B2F285272E3007AACC2 /* Validator.swift in Sources */,
 				3B99C7B62850EAB000FBED8E /* Knife.swift in Sources */,
 				3B99C7C82850F15A00FBED8E /* Mediator.swift in Sources */,
@@ -418,7 +430,7 @@
 				3B99C7BB2850EAD700FBED8E /* AirBalloon.swift in Sources */,
 				3B99C7C22850EB3A00FBED8E /* Moon.swift in Sources */,
 				3BD54C43284FC64C0004EACB /* SceneDelegate.swift in Sources */,
-				3B9F4B3128527304007AACC2 /* ValidationRuleProtocol.swift in Sources */,
+				3B9F4B3128527304007AACC2 /* Rule.swift in Sources */,
 				3B99C7C52850EC7D00FBED8E /* Validable.swift in Sources */,
 				3B99C7BD2850EAE100FBED8E /* Ball.swift in Sources */,
 			);

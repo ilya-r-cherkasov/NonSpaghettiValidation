@@ -5,31 +5,31 @@
 //  Created by Ilya Cherkasov on 10.06.2022.
 //
 
-protocol Surveyable: AnyObject {
+protocol Surveyable: AnyObject, Validable {
     
     var surveyableObjectsProvider: SurveyableObjectsProvider? { get set }
     
-    func checkYourself() -> Bool
-    func askOther() -> Bool
-    func haveNoConflict(with: Surveyable) -> Bool
+    func checkYourself() -> [Conflict]
+    func askOther() -> [Conflict]
+    func haveNoConflict(with pupil: Surveyable) -> [Conflict]
     
 }
 
 extension Surveyable {
     
-    func checkYourself() -> Bool {
-        true
+    func checkYourself() -> [Conflict] {
+        []
     }
     
-    func askOther() -> Bool {
+    func askOther() -> [Conflict] {
         let other = surveyableObjectsProvider?.surveyableObjects.filter { !($0 is Self) } ?? []
-        return other.reduce(true) {
-            $0 && $1.haveNoConflict(with: self)
+        return other.reduce([Conflict]()) {
+            $0 + $1.haveNoConflict(with: self)
         }
     }
     
-    func haveNoConflict(with pupil: Surveyable) -> Bool {
-        true
+    func haveNoConflict(with pupil: Surveyable) -> [Conflict] {
+        validator.validate(for: pupil)
     }
     
 }
