@@ -5,9 +5,13 @@
 //  Created by Ilya Cherkasov on 07.06.2022.
 //
 
-import Foundation
+import Referee
 
 final class MainPresenter: MainViewOutput {
+    
+    // MARK: - Nested types
+    
+    typealias Teacher = MainReferee
     
     // MARK: - Internal properties
     

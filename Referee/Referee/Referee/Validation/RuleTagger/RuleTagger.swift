@@ -5,7 +5,7 @@
 //  Created by Ilya Cherkasov on 13.06.2022.
 //
 
-enum RuleTagger: String {
+public enum RuleTagger: String {
     
     case starShouldBeInTrip
     

@@ -5,15 +5,15 @@
 //  Created by Ilya Cherkasov on 09.06.2022.
 //
 
-final class Validator {
+public class Validator {
     
     // MARK: - Properties
     
-    var rules = [Rule]()
+    public var rules = [Rule]()
     
     // MARK: - Initialization
     
-    init(rules: [Rule]) {
+    public init(rules: [Rule]) {
         self.rules = rules
     }
     

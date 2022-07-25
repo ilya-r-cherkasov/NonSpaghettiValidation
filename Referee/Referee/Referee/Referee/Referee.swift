@@ -5,14 +5,12 @@
 //  Created by Ilya Cherkasov on 09.06.2022.
 //
 
-typealias Teacher = Referee
-
-final class Referee: SurveyableObjectsProvider {
+public class MainReferee: SurveyableObjectsProvider {
     
     // MARK: - Static functions
     
-    static func make(with surveyableObjects: [Surveyable]) -> Referee {
-        Referee(surveyableObjects: surveyableObjects)
+    public static func make(with surveyableObjects: [Surveyable]) -> MainReferee {
+        MainReferee(surveyableObjects: surveyableObjects)
             .configure()
     }
     
@@ -25,7 +23,7 @@ final class Referee: SurveyableObjectsProvider {
     // MARK: - Internal properties
     
     // TODO: тут лучше Set, но надо требовать Hashable
-    private(set) var surveyableObjects: [Surveyable]
+    private(set) public var surveyableObjects: [Surveyable]
     
     var allRules: [Rule] {
         surveyableObjects
@@ -35,7 +33,7 @@ final class Referee: SurveyableObjectsProvider {
     
     // MARK: - Methods
     
-    func startSurvey() -> [Conflict] {
+    public func startSurvey() -> [Conflict] {
         let rawConflicts = surveyableObjects.reduce([Conflict]()) {
             $0 + $1.checkYourself() + $1.askOther()
         }
@@ -46,17 +44,19 @@ final class Referee: SurveyableObjectsProvider {
 
 // MARK: - Private functions
 
-private extension Referee {
+private extension MainReferee {
     
-    func configure() -> Referee {
+    
+    ///Подписываем всех участников под делегат
+    func configure() -> MainReferee {
         surveyableObjects.forEach { $0.surveyableObjectsProvider = self }
         return self
     }
     
+    /// Проверяем, что если выполнены правила с тем же тегом, но приоритетом выше
+    /// Конфликт, если таких правил нет
+    /// Скорее всего может быть баг, могут намешаться конфликты с одним тегом и разным приоритетом
     func tryResolve(conficts: [Conflict]) -> [Conflict] {
-        // Проверяем, что если выполнены правила с тем же тегом, но приоритетом выше
-        // Конфликт, если таких правил нет
-        // Скорее всего может быть баг, могут намешаться конфликты с одним тегом и разным приоритетом
         conficts.compactMap { conflict in
             let filteredRules = allRules
                 .filter { $0.tag == conflict.tag }

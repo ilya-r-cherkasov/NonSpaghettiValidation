@@ -5,7 +5,7 @@
 //  Created by Ilya Cherkasov on 10.06.2022.
 //
 
-protocol Surveyable: AnyObject, Validable {
+public protocol Surveyable: AnyObject, Validable {
     
     var surveyableObjectsProvider: SurveyableObjectsProvider? { get set }
     
@@ -15,7 +15,7 @@ protocol Surveyable: AnyObject, Validable {
     
 }
 
-extension Surveyable {
+public extension Surveyable {
     
     func checkYourself() -> [Conflict] {
         []

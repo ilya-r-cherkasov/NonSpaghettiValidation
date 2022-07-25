@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol Validable {
+public protocol Validable {
     
     var validator: Validator { get }
     
 }
 
-extension Validable {
+public extension Validable {
         
     var validator: Validator {
         Validator(rules: [])

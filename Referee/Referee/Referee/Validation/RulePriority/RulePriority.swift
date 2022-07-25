@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RulePriority {
+public struct RulePriority {
     
     // MARK: - Properties
 
@@ -21,7 +21,7 @@ struct RulePriority {
     
 }
 
-extension RulePriority {
+public extension RulePriority {
     
     static let low = RulePriority(250)
     static let medium = RulePriority(500)
@@ -31,7 +31,7 @@ extension RulePriority {
 
 extension RulePriority: Comparable {
     
-    static func < (lhs: RulePriority, rhs: RulePriority) -> Bool {
+    public static func < (lhs: RulePriority, rhs: RulePriority) -> Bool {
         lhs.raw < rhs.raw
     }
     

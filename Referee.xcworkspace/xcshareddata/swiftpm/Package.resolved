@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "reactivedatadisplaymanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/surfstudio/ReactiveDataDisplayManager",
+      "state" : {
+        "revision" : "83e69174ae95cd845b010992515fa84e9a8354f2",
+        "version" : "7.2.1"
+      }
+    }
+  ],
+  "version" : 2
+}

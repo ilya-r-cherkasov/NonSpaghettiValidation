@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Referee
 
 final class AirBalloon: Pupil {
     

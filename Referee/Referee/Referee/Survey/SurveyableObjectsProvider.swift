@@ -5,7 +5,7 @@
 //  Created by Ilya Cherkasov on 09.06.2022.
 //
 
-protocol SurveyableObjectsProvider: AnyObject {
+public protocol SurveyableObjectsProvider: AnyObject {
     
     var surveyableObjects: [Surveyable] { get }
     

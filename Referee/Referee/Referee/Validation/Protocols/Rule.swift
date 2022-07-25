@@ -5,7 +5,7 @@
 //  Created by Ilya Cherkasov on 09.06.2022.
 //
 
-protocol Rule: AnyObject {
+public protocol Rule: AnyObject {
     
     var isValid: Bool { get }
     var priority: RulePriority { get set }
@@ -14,15 +14,15 @@ protocol Rule: AnyObject {
         
 }
 
-final class DefaultRule: Rule {
+public final class DefaultRule: Rule {
     
     // MARK: - Properties
     
-    var priority: RulePriority
-    var tag: String
-    weak var currentObject: Surveyable?
+    public var priority: RulePriority
+    public var tag: String
+    weak public var currentObject: Surveyable?
     
-    var isValid: Bool {
+    public var isValid: Bool {
         guard let currentObject = currentObject else {
             return false
         }
@@ -31,11 +31,11 @@ final class DefaultRule: Rule {
     
     // MARK: - Private properties
     
-    var rule: ((Surveyable) -> Bool)
+    public var rule: ((Surveyable) -> Bool)
     
     // MARK: - Initialization
     
-    init(priority: RulePriority, tag: String, rule: @escaping ((Surveyable) -> Bool)) {
+    public init(priority: RulePriority, tag: String, rule: @escaping ((Surveyable) -> Bool)) {
         self.rule = rule
         self.priority = priority
         self.tag = tag
