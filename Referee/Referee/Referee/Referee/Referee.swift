@@ -5,36 +5,36 @@
 //  Created by Ilya Cherkasov on 09.06.2022.
 //
 
-public class MainReferee: SurveyableObjectsProvider {
+public class Referee: VotersProvider {
     
     // MARK: - Static functions
     
-    public static func make(with surveyableObjects: [Surveyable]) -> MainReferee {
-        MainReferee(surveyableObjects: surveyableObjects)
+    public static func make(with voters: [Voting]) -> Referee {
+        Referee(voters: voters)
             .configure()
     }
     
     // MARK: - Initialization
     
-    private init(surveyableObjects: [Surveyable]) {
-        self.surveyableObjects = surveyableObjects
+    private init(voters: [Voting]) {
+        self.voters = voters
     }
     
     // MARK: - Internal properties
     
     // TODO: тут лучше Set, но надо требовать Hashable
-    private(set) public var surveyableObjects: [Surveyable]
+    private(set) public var voters: [Voting]
     
     var allRules: [Rule] {
-        surveyableObjects
+        voters
             .map { $0.validator.rules }
             .flatMap { $0 }
     }
     
     // MARK: - Methods
     
-    public func startSurvey() -> [Conflict] {
-        let rawConflicts = surveyableObjects.reduce([Conflict]()) {
+    public func startVoting() -> [Conflict] {
+        let rawConflicts = voters.reduce([Conflict]()) {
             $0 + $1.checkYourself() + $1.askOther()
         }
         return tryResolve(conficts: rawConflicts)
@@ -44,12 +44,12 @@ public class MainReferee: SurveyableObjectsProvider {
 
 // MARK: - Private functions
 
-private extension MainReferee {
+private extension Referee {
     
     
     ///Подписываем всех участников под делегат
-    func configure() -> MainReferee {
-        surveyableObjects.forEach { $0.surveyableObjectsProvider = self }
+    func configure() -> Referee {
+        voters.forEach { $0.votersProvider = self }
         return self
     }
     

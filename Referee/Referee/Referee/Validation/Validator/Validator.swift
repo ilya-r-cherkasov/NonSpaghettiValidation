@@ -19,7 +19,7 @@ public class Validator {
     
     // MARK: - Functions
     
-    func validate(for object: Surveyable) -> [Conflict] {
+    func validate(for object: Voting) -> [Conflict] {
         rules.reduce([Conflict]()) {
             // TODO: Такое себе канеш сетить тут объект, но пока так
             $1.currentObject = object

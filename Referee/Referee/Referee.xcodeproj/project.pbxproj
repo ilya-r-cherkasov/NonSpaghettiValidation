@@ -16,10 +16,14 @@
 		09992654288ED9F100F4A472 /* RulePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999264E288ED9CE00F4A472 /* RulePriority.swift */; };
 		09992655288ED9F100F4A472 /* Validable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992650288ED9CE00F4A472 /* Validable.swift */; };
 		09992656288ED9F200F4A472 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992651288ED9CE00F4A472 /* Rule.swift */; };
-		09992657288ED9F200F4A472 /* SurveyableObjectsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992645288ED9CA00F4A472 /* SurveyableObjectsProvider.swift */; };
+		09992657288ED9F200F4A472 /* VotersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992645288ED9CA00F4A472 /* VotersProvider.swift */; };
 		09992658288ED9F200F4A472 /* Conflict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992646288ED9CA00F4A472 /* Conflict.swift */; };
-		09992659288ED9F200F4A472 /* Surveyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992647288ED9CA00F4A472 /* Surveyable.swift */; };
+		09992659288ED9F200F4A472 /* Voting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992647288ED9CA00F4A472 /* Voting.swift */; };
 		0999265A288ED9F200F4A472 /* Referee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992642288ED9C000F4A472 /* Referee.swift */; };
+		0999265D288EE65D00F4A472 /* Refereing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999265C288EE65C00F4A472 /* Refereing.swift */; };
+		0999265F288F00BB00F4A472 /* VotersGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999265E288F00BB00F4A472 /* VotersGroup.swift */; };
+		09992661288F00E400F4A472 /* VotersRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992660288F00E400F4A472 /* VotersRule.swift */; };
+		09992663288F047700F4A472 /* Voters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992662288F047700F4A472 /* Voters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,14 +43,18 @@
 		0930CB89288ECF7B006B0130 /* RefereeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefereeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930CB8E288ECF7B006B0130 /* RefereeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefereeTests.swift; sourceTree = "<group>"; };
 		09992642288ED9C000F4A472 /* Referee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Referee.swift; sourceTree = "<group>"; };
-		09992645288ED9CA00F4A472 /* SurveyableObjectsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyableObjectsProvider.swift; sourceTree = "<group>"; };
+		09992645288ED9CA00F4A472 /* VotersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotersProvider.swift; sourceTree = "<group>"; };
 		09992646288ED9CA00F4A472 /* Conflict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conflict.swift; sourceTree = "<group>"; };
-		09992647288ED9CA00F4A472 /* Surveyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Surveyable.swift; sourceTree = "<group>"; };
+		09992647288ED9CA00F4A472 /* Voting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voting.swift; sourceTree = "<group>"; };
 		0999264A288ED9CE00F4A472 /* RuleTagger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleTagger.swift; sourceTree = "<group>"; };
 		0999264C288ED9CE00F4A472 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		0999264E288ED9CE00F4A472 /* RulePriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulePriority.swift; sourceTree = "<group>"; };
 		09992650288ED9CE00F4A472 /* Validable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validable.swift; sourceTree = "<group>"; };
 		09992651288ED9CE00F4A472 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		0999265C288EE65C00F4A472 /* Refereing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refereing.swift; sourceTree = "<group>"; };
+		0999265E288F00BB00F4A472 /* VotersGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotersGroup.swift; sourceTree = "<group>"; };
+		09992660288F00E400F4A472 /* VotersRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotersRule.swift; sourceTree = "<group>"; };
+		09992662288F047700F4A472 /* Voters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				09992648288ED9CE00F4A472 /* Validation */,
-				09992644288ED9CA00F4A472 /* Survey */,
+				09992644288ED9CA00F4A472 /* Voters */,
 				09992641288ED9C000F4A472 /* Referee */,
 				0930CB82288ECF7B006B0130 /* Referee.h */,
 				0930CB83288ECF7B006B0130 /* Referee.docc */,
@@ -114,19 +122,20 @@
 			path = Referee;
 			sourceTree = "<group>";
 		};
-		09992644288ED9CA00F4A472 /* Survey */ = {
+		09992644288ED9CA00F4A472 /* Voters */ = {
 			isa = PBXGroup;
 			children = (
-				09992645288ED9CA00F4A472 /* SurveyableObjectsProvider.swift */,
+				09992645288ED9CA00F4A472 /* VotersProvider.swift */,
 				09992646288ED9CA00F4A472 /* Conflict.swift */,
-				09992647288ED9CA00F4A472 /* Surveyable.swift */,
+				09992647288ED9CA00F4A472 /* Voting.swift */,
 			);
-			path = Survey;
+			path = Voters;
 			sourceTree = "<group>";
 		};
 		09992648288ED9CE00F4A472 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				0999265B288EE53200F4A472 /* Refereing */,
 				09992649288ED9CE00F4A472 /* RuleTagger */,
 				0999264B288ED9CE00F4A472 /* Validator */,
 				0999264D288ED9CE00F4A472 /* RulePriority */,
@@ -166,6 +175,17 @@
 				09992651288ED9CE00F4A472 /* Rule.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0999265B288EE53200F4A472 /* Refereing */ = {
+			isa = PBXGroup;
+			children = (
+				0999265C288EE65C00F4A472 /* Refereing.swift */,
+				09992662288F047700F4A472 /* Voters.swift */,
+				0999265E288F00BB00F4A472 /* VotersGroup.swift */,
+				09992660288F00E400F4A472 /* VotersRule.swift */,
+			);
+			path = Refereing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,14 +298,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				09992652288ED9F100F4A472 /* RuleTagger.swift in Sources */,
+				0999265F288F00BB00F4A472 /* VotersGroup.swift in Sources */,
 				09992653288ED9F100F4A472 /* Validator.swift in Sources */,
 				09992654288ED9F100F4A472 /* RulePriority.swift in Sources */,
 				09992655288ED9F100F4A472 /* Validable.swift in Sources */,
+				09992661288F00E400F4A472 /* VotersRule.swift in Sources */,
 				09992656288ED9F200F4A472 /* Rule.swift in Sources */,
-				09992657288ED9F200F4A472 /* SurveyableObjectsProvider.swift in Sources */,
+				09992657288ED9F200F4A472 /* VotersProvider.swift in Sources */,
 				09992658288ED9F200F4A472 /* Conflict.swift in Sources */,
-				09992659288ED9F200F4A472 /* Surveyable.swift in Sources */,
+				09992659288ED9F200F4A472 /* Voting.swift in Sources */,
+				0999265D288EE65D00F4A472 /* Refereing.swift in Sources */,
 				0999265A288ED9F200F4A472 /* Referee.swift in Sources */,
+				09992663288F047700F4A472 /* Voters.swift in Sources */,
 				0930CB84288ECF7B006B0130 /* Referee.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

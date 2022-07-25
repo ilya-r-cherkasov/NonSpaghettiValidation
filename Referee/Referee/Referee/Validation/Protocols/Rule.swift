@@ -10,7 +10,7 @@ public protocol Rule: AnyObject {
     var isValid: Bool { get }
     var priority: RulePriority { get set }
     var tag: String { get set }
-    var currentObject: Surveyable? { get set }
+    var currentObject: Voting? { get set }
         
 }
 
@@ -20,7 +20,7 @@ public final class DefaultRule: Rule {
     
     public var priority: RulePriority
     public var tag: String
-    weak public var currentObject: Surveyable?
+    weak public var currentObject: Voting?
     
     public var isValid: Bool {
         guard let currentObject = currentObject else {
@@ -31,11 +31,11 @@ public final class DefaultRule: Rule {
     
     // MARK: - Private properties
     
-    public var rule: ((Surveyable) -> Bool)
+    public var rule: ((Voting) -> Bool)
     
     // MARK: - Initialization
     
-    public init(priority: RulePriority, tag: String, rule: @escaping ((Surveyable) -> Bool)) {
+    public init(priority: RulePriority, tag: String, rule: @escaping ((Voting) -> Bool)) {
         self.rule = rule
         self.priority = priority
         self.tag = tag

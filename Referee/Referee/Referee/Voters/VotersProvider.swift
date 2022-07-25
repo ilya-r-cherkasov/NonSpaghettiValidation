@@ -5,8 +5,8 @@
 //  Created by Ilya Cherkasov on 09.06.2022.
 //
 
-public protocol SurveyableObjectsProvider: AnyObject {
+public protocol VotersProvider: AnyObject {
     
-    var surveyableObjects: [Surveyable] { get }
+    var voters: [Voting] { get }
     
 }

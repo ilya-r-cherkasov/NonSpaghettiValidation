@@ -10,7 +10,7 @@ import Referee
 
 final class Star: Pupil {
     
-    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
+    weak var votersProvider: VotersProvider?
     var shape: ShapeType = .neutral
     var color: UIColor = .yellow
     var nickname: String = "Star"

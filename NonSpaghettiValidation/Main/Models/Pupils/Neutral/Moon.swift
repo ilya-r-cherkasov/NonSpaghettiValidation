@@ -26,7 +26,7 @@ final class Moon: Pupil {
         ])
     }
     
-    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
+    weak var votersProvider: VotersProvider?
     var shape: ShapeType = .neutral
     var color: UIColor = .white
     var nickname: String = "Moon"

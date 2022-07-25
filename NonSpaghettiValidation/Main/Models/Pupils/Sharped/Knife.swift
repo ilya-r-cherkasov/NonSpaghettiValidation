@@ -10,7 +10,7 @@ import Referee
 
 final class Knife: Pupil {
     
-    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
+    weak var votersProvider: VotersProvider?
     var shape: ShapeType = .sharp
     var color: UIColor = .green
     var nickname: String = "Knife"

@@ -10,7 +10,7 @@ import Referee
 
 final class Trident: Pupil {
     
-    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
+    weak var votersProvider: VotersProvider?
     var shape: ShapeType = .sharp
     var color: UIColor = .white
     var nickname: String = "Trident"

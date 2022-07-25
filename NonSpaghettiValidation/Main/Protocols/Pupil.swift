@@ -7,4 +7,4 @@
 
 import Referee
 
-typealias Pupil = ViewRepresentable & Surveyable
+typealias Pupil = ViewRepresentable & Voting

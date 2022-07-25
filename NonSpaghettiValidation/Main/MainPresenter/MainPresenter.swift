@@ -11,7 +11,7 @@ final class MainPresenter: MainViewOutput {
     
     // MARK: - Nested types
     
-    typealias Teacher = MainReferee
+    typealias Teacher = Referee
     
     // MARK: - Internal properties
     
@@ -37,7 +37,7 @@ final class MainPresenter: MainViewOutput {
     
     func viewDidLoad() {
         view?.configure(
-            withFileds: teacher.surveyableObjects
+            withFileds: teacher.voters
                 .compactMap { $0 as? ViewRepresentable }
                 .map { pupil in
                 var model = InputCellModel(
@@ -56,8 +56,26 @@ final class MainPresenter: MainViewOutput {
     }
     
     func nextButtonTapped() {
-        let conficts = teacher.startSurvey()
+        let conficts = teacher.startVoting()
         print(conficts.isEmpty)
+    }
+    
+}
+
+extension MainPresenter: Refereing {
+    
+    var voters: Voters {
+        VotersGroup {
+            VotersGroup {
+                Mediator()
+            }
+            VotersRules {
+                VotersGroup {
+                    Mediator()
+                    Trident()
+                }
+            }
+        }
     }
     
 }

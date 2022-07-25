@@ -10,7 +10,7 @@ import Referee
 
 final class AirBalloon: Pupil {
     
-    weak var surveyableObjectsProvider: SurveyableObjectsProvider?
+    weak var votersProvider: VotersProvider?
     var shape: ShapeType = .rounded
     var color: UIColor = .white
     var nickname: String = "AirBalloon"
