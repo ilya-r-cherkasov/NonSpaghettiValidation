@@ -10,6 +10,7 @@ import Referee
 
 final class Star: Pupil {
     
+    var validator: Validator = Validator()
     weak var votersProvider: VotersProvider?
     var shape: ShapeType = .neutral
     var color: UIColor = .yellow

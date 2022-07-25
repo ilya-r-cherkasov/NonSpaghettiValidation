@@ -12,6 +12,7 @@ final class Mediator: Pupil {
     
     // MARK: - Internal properties
     
+    var validator: Validator = Validator()
     weak var votersProvider: VotersProvider?
     var shape: ShapeType = .nonDefined
     var nickname: String = "Mediator"

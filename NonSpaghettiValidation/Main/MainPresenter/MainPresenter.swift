@@ -7,38 +7,64 @@
 
 import Referee
 
-final class MainPresenter: MainViewOutput {
-    
-    // MARK: - Nested types
-    
-    typealias Teacher = Referee
+final class MainPresenter: MainViewOutput, Refereing {
     
     // MARK: - Internal properties
     
     weak var view: MainViewInput?
-    
-    // MARK: - Private properties
-    
-    private lazy var teacher: Teacher = {
-        Teacher.make(with: [
-            Mediator(),
-            Star(),
-            Moon(),
-            HeliumBalloon(),
-            AirBalloon(),
-            Ball(),
-            Needle(),
-            Trident(),
-            Knife()
-        ])
+        
+    lazy var votersBody: Voters = {
+        
+        let nonEmptyRule = DefaultRule(priority: .hight, tag: "firstRule") { voting in
+            guard let pupil = voting as? Moon else {
+                return true
+            }
+            return !pupil.nickname.isEmpty
+        }
+        
+        let oneCharRule = DefaultRule(priority: .hight, tag: "oneCharRule") { voting in
+            guard let pupil = voting as? Moon else {
+                return true
+            }
+            return pupil.nickname.count != 1
+        }
+        
+        let twoCharRule = DefaultRule(priority: .hight, tag: "twoCharRule") { voting in
+            guard let pupil = voting as? Moon else {
+                return true
+            }
+            return pupil.nickname.count != 2
+        }
+        
+        return VotersGroup {
+            VotersGroup {
+                Mediator()
+                Star()
+                Moon()
+            }
+            VotersRules(nonEmptyRule) {
+                VotersGroup {
+                    AirBalloon()
+                    Ball()
+                }
+                VotersRules(oneCharRule) {
+                    Needle()
+                    Knife()
+                }
+                VotersRules(twoCharRule) {
+                    HeliumBalloon()
+                    Trident()
+                }
+            }
+        }
     }()
     
     // MARK: - MainViewOutput
     
     func viewDidLoad() {
         view?.configure(
-            withFileds: teacher.voters
-                .compactMap { $0 as? ViewRepresentable }
+            withFileds:
+                votersBody.voters.compactMap { $0 as? ViewRepresentable }
                 .map { pupil in
                 var model = InputCellModel(
                     nickname: pupil.nickname,
@@ -56,26 +82,8 @@ final class MainPresenter: MainViewOutput {
     }
     
     func nextButtonTapped() {
-        let conficts = teacher.startVoting()
+        let conficts = startVoting()
         print(conficts.isEmpty)
-    }
-    
-}
-
-extension MainPresenter: Refereing {
-    
-    var voters: Voters {
-        VotersGroup {
-            VotersGroup {
-                Mediator()
-            }
-            VotersRules {
-                VotersGroup {
-                    Mediator()
-                    Trident()
-                }
-            }
-        }
     }
     
 }

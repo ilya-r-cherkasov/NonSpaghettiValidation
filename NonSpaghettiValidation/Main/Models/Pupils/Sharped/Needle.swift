@@ -10,6 +10,7 @@ import Referee
 
 final class Needle: Pupil {
     
+    var validator: Validator = Validator()
     weak var votersProvider: VotersProvider?
     var shape: ShapeType = .sharp
     var color: UIColor = .white

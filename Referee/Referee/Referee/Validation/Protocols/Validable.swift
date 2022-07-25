@@ -9,7 +9,7 @@ import Foundation
 
 public protocol Validable {
     
-    var validator: Validator { get }
+    var validator: Validator { get set }
     
 }
 

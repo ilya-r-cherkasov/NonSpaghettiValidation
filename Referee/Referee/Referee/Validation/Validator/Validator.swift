@@ -13,7 +13,7 @@ public class Validator {
     
     // MARK: - Initialization
     
-    public init(rules: [Rule]) {
+    public init(rules: [Rule] = []) {
         self.rules = rules
     }
     

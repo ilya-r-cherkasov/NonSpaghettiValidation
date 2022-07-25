@@ -9,7 +9,7 @@ public struct VotersGroup: Voters {
     
     public var voters: [Voting]
     
-    public init(@VotersSetBuilder voters: () -> Voters) {
+    public init(@VotersBuilder voters: () -> Voters) {
         self.voters = voters().voters
     }
     
@@ -19,7 +19,7 @@ public struct VotersGroup: Voters {
     
 }
 
-@resultBuilder public struct VotersSetBuilder {
+@resultBuilder public struct VotersBuilder {
     
     public static func buildBlock(_ components: Voters...) -> Voters {
         VotersDTO(voters: components.flatMap { $0.voters })

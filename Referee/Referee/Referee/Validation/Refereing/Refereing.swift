@@ -7,6 +7,17 @@
 
 public protocol Refereing {
     
-    var voters: Voters { get }
+    var votersBody: Voters { get }
+    
+    func startVoting() -> [Conflict]
+    
+}
+
+public extension Refereing {
+    
+    func startVoting() -> [Conflict] {
+        let referee = Referee.make(with: votersBody.voters)
+        return referee.startVoting()
+    }
     
 }

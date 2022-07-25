@@ -33,9 +33,3 @@ public extension Voting {
     }
     
 }
-
-class DefaultVoter: Voting {
-    
-    var votersProvider: VotersProvider?
-    
-}

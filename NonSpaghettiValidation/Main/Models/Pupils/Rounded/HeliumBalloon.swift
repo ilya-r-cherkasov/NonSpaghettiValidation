@@ -10,6 +10,7 @@ import Referee
 
 final class HeliumBalloon: Pupil {
     
+    var validator: Validator = Validator()
     weak var votersProvider: VotersProvider?
     var shape: ShapeType = .rounded
     var color: UIColor = .white
