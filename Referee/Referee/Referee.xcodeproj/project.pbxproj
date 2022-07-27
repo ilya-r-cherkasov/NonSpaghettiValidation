@@ -11,6 +11,7 @@
 		0930CB8A288ECF7B006B0130 /* Referee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0930CB7F288ECF7B006B0130 /* Referee.framework */; };
 		0930CB8F288ECF7B006B0130 /* RefereeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0930CB8E288ECF7B006B0130 /* RefereeTests.swift */; };
 		0930CB90288ECF7B006B0130 /* Referee.h in Headers */ = {isa = PBXBuildFile; fileRef = 0930CB82288ECF7B006B0130 /* Referee.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09534FEE2891C54600732ED9 /* LimitedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09534FED2891C54600732ED9 /* LimitedTests.swift */; };
 		09992653288ED9F100F4A472 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999264C288ED9CE00F4A472 /* Validator.swift */; };
 		09992654288ED9F100F4A472 /* RulePriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999264E288ED9CE00F4A472 /* RulePriority.swift */; };
 		09992655288ED9F100F4A472 /* Validable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992650288ED9CE00F4A472 /* Validable.swift */; };
@@ -48,6 +49,7 @@
 		0930CB83288ECF7B006B0130 /* Referee.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Referee.docc; sourceTree = "<group>"; };
 		0930CB89288ECF7B006B0130 /* RefereeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefereeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0930CB8E288ECF7B006B0130 /* RefereeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefereeTests.swift; sourceTree = "<group>"; };
+		09534FED2891C54600732ED9 /* LimitedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedTests.swift; sourceTree = "<group>"; };
 		09992642288ED9C000F4A472 /* Referee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Referee.swift; sourceTree = "<group>"; };
 		09992645288ED9CA00F4A472 /* VotersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotersProvider.swift; sourceTree = "<group>"; };
 		09992646288ED9CA00F4A472 /* Conflict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conflict.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				0930CB8E288ECF7B006B0130 /* RefereeTests.swift */,
+				09534FED2891C54600732ED9 /* LimitedTests.swift */,
 			);
 			path = RefereeTests;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09534FEE2891C54600732ED9 /* LimitedTests.swift in Sources */,
 				0930CB8F288ECF7B006B0130 /* RefereeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
