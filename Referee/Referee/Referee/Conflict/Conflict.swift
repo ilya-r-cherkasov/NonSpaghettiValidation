@@ -1,11 +1,11 @@
 //
-//  DefaultConflict.swift
-//  Referee
+//  Conflict.swift
+//  NonSpaghettiValidation
 //
-//  Created by Ilya Cherkasov on 27.07.2022.
+//  Created by Ilya Cherkasov on 11.06.2022.
 //
 
-public struct DefaultConflict: Conflict {
+public struct Conflict {
     
     public var tag: String
     public var priority: RulePriority

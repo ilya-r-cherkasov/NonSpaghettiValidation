@@ -18,7 +18,7 @@ final class Needle: Pupil {
     var isWantGoTrip: Bool = false
     
     func checkYourself() -> [Conflict] {
-        isWantGoTrip ? [] : [DefaultConflict(tag: "Needle non active", priority: .medium)]
+        isWantGoTrip ? [] : [Conflict(tag: "Needle non active", priority: .medium)]
     }
     
 }

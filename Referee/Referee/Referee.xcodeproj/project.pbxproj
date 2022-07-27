@@ -25,12 +25,11 @@
 		09992663288F047700F4A472 /* Voters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09992662288F047700F4A472 /* Voters.swift */; };
 		0999266B2891198B00F4A472 /* DefaultOneTwoOneRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999266A2891198B00F4A472 /* DefaultOneTwoOneRule.swift */; };
 		0999266D28911E6A00F4A472 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999266C28911E6A00F4A472 /* Rule.swift */; };
-		0999266F2891221B00F4A472 /* DefaultConflict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999266E2891221B00F4A472 /* DefaultConflict.swift */; };
-		099926712891270100F4A472 /* AnyVoiting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099926702891270100F4A472 /* AnyVoiting.swift */; };
 		099926792891346900F4A472 /* DefaultSelfCheckRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099926782891346900F4A472 /* DefaultSelfCheckRule.swift */; };
 		0999267C28913C2300F4A472 /* SelfCheckRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999267B28913C2300F4A472 /* SelfCheckRule.swift */; };
 		0999267E289157E100F4A472 /* RoundTableRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999267D289157E100F4A472 /* RoundTableRule.swift */; };
 		0999268028915BDE00F4A472 /* DefaultRoundTableRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999267F28915BDE00F4A472 /* DefaultRoundTableRule.swift */; };
+		0999268A2891A3EA00F4A472 /* Limited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099926892891A3EA00F4A472 /* Limited.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,12 +62,11 @@
 		09992662288F047700F4A472 /* Voters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voters.swift; sourceTree = "<group>"; };
 		0999266A2891198B00F4A472 /* DefaultOneTwoOneRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOneTwoOneRule.swift; sourceTree = "<group>"; };
 		0999266C28911E6A00F4A472 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
-		0999266E2891221B00F4A472 /* DefaultConflict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConflict.swift; sourceTree = "<group>"; };
-		099926702891270100F4A472 /* AnyVoiting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyVoiting.swift; sourceTree = "<group>"; };
 		099926782891346900F4A472 /* DefaultSelfCheckRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSelfCheckRule.swift; sourceTree = "<group>"; };
 		0999267B28913C2300F4A472 /* SelfCheckRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCheckRule.swift; sourceTree = "<group>"; };
 		0999267D289157E100F4A472 /* RoundTableRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTableRule.swift; sourceTree = "<group>"; };
 		0999267F28915BDE00F4A472 /* DefaultRoundTableRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRoundTableRule.swift; sourceTree = "<group>"; };
+		099926892891A3EA00F4A472 /* Limited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limited.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,11 +109,15 @@
 		0930CB81288ECF7B006B0130 /* Referee */ = {
 			isa = PBXGroup;
 			children = (
-				099926692891196400F4A472 /* DefaultImplemet */,
-				0999264F288ED9CE00F4A472 /* Protocols */,
+				099926882891A3DD00F4A472 /* Wrappers */,
+				099926692891196400F4A472 /* DefaultImplementation */,
+				09992641288ED9C000F4A472 /* Referee */,
+				099926682891192400F4A472 /* Rules */,
+				099926722891271900F4A472 /* Voiting */,
+				0999267A2891365900F4A472 /* Conflict */,
+				0999264D288ED9CE00F4A472 /* RulePriority */,
 				09992648288ED9CE00F4A472 /* Validation */,
 				09992644288ED9CA00F4A472 /* Voters */,
-				09992641288ED9C000F4A472 /* Referee */,
 				0930CB82288ECF7B006B0130 /* Referee.h */,
 				0930CB83288ECF7B006B0130 /* Referee.docc */,
 			);
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				09992642288ED9C000F4A472 /* Referee.swift */,
+				0999268428917B5400F4A472 /* Protocols */,
 			);
 			path = Referee;
 			sourceTree = "<group>";
@@ -152,8 +155,8 @@
 		09992648288ED9CE00F4A472 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				099926672891190100F4A472 /* Protocols */,
 				0999264B288ED9CE00F4A472 /* Validator */,
-				0999264D288ED9CE00F4A472 /* RulePriority */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -174,32 +177,12 @@
 			path = RulePriority;
 			sourceTree = "<group>";
 		};
-		0999264F288ED9CE00F4A472 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				0999267A2891365900F4A472 /* Conflict */,
-				099926722891271900F4A472 /* Voiting */,
-				099926682891192400F4A472 /* Rules */,
-				099926672891190100F4A472 /* Validable */,
-				0999265B288EE53200F4A472 /* Refereing */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		0999265B288EE53200F4A472 /* Refereing */ = {
-			isa = PBXGroup;
-			children = (
-				0999265C288EE65C00F4A472 /* Refereing.swift */,
-			);
-			path = Refereing;
-			sourceTree = "<group>";
-		};
-		099926672891190100F4A472 /* Validable */ = {
+		099926672891190100F4A472 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				09992650288ED9CE00F4A472 /* Validable.swift */,
 			);
-			path = Validable;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		099926682891192400F4A472 /* Rules */ = {
@@ -213,20 +196,18 @@
 			path = Rules;
 			sourceTree = "<group>";
 		};
-		099926692891196400F4A472 /* DefaultImplemet */ = {
+		099926692891196400F4A472 /* DefaultImplementation */ = {
 			isa = PBXGroup;
 			children = (
-				09992677289133BB00F4A472 /* DefaultConflicts */,
 				09992676289133B000F4A472 /* DefaultRules */,
 			);
-			path = DefaultImplemet;
+			path = DefaultImplementation;
 			sourceTree = "<group>";
 		};
 		099926722891271900F4A472 /* Voiting */ = {
 			isa = PBXGroup;
 			children = (
 				09992647288ED9CA00F4A472 /* Voting.swift */,
-				099926702891270100F4A472 /* AnyVoiting.swift */,
 			);
 			path = Voiting;
 			sourceTree = "<group>";
@@ -241,20 +222,28 @@
 			path = DefaultRules;
 			sourceTree = "<group>";
 		};
-		09992677289133BB00F4A472 /* DefaultConflicts */ = {
-			isa = PBXGroup;
-			children = (
-				0999266E2891221B00F4A472 /* DefaultConflict.swift */,
-			);
-			path = DefaultConflicts;
-			sourceTree = "<group>";
-		};
 		0999267A2891365900F4A472 /* Conflict */ = {
 			isa = PBXGroup;
 			children = (
 				09992646288ED9CA00F4A472 /* Conflict.swift */,
 			);
 			path = Conflict;
+			sourceTree = "<group>";
+		};
+		0999268428917B5400F4A472 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0999265C288EE65C00F4A472 /* Refereing.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		099926882891A3DD00F4A472 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				099926892891A3EA00F4A472 /* Limited.swift */,
+			);
+			path = Wrappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,15 +359,14 @@
 				0999265F288F00BB00F4A472 /* VotersGroup.swift in Sources */,
 				09992653288ED9F100F4A472 /* Validator.swift in Sources */,
 				09992654288ED9F100F4A472 /* RulePriority.swift in Sources */,
+				0999268A2891A3EA00F4A472 /* Limited.swift in Sources */,
 				09992655288ED9F100F4A472 /* Validable.swift in Sources */,
 				0999268028915BDE00F4A472 /* DefaultRoundTableRule.swift in Sources */,
 				09992661288F00E400F4A472 /* VotersRule.swift in Sources */,
 				09992656288ED9F200F4A472 /* OneTwoOneRule.swift in Sources */,
 				0999267E289157E100F4A472 /* RoundTableRule.swift in Sources */,
 				0999266D28911E6A00F4A472 /* Rule.swift in Sources */,
-				0999266F2891221B00F4A472 /* DefaultConflict.swift in Sources */,
 				09992657288ED9F200F4A472 /* VotersProvider.swift in Sources */,
-				099926712891270100F4A472 /* AnyVoiting.swift in Sources */,
 				0999266B2891198B00F4A472 /* DefaultOneTwoOneRule.swift in Sources */,
 				09992658288ED9F200F4A472 /* Conflict.swift in Sources */,
 				09992659288ED9F200F4A472 /* Voting.swift in Sources */,

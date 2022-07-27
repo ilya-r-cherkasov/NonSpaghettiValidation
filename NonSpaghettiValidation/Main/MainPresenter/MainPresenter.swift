@@ -7,7 +7,7 @@
 
 import Referee
 
-final class MainPresenter: MainViewOutput, Refereing {
+final class MainPresenter: Refereing {
     
     // MARK: - Internal properties
     
@@ -70,7 +70,11 @@ final class MainPresenter: MainViewOutput, Refereing {
         }
     }()
     
-    // MARK: - MainViewOutput
+}
+
+// MARK: - MainViewOutput
+
+extension MainPresenter: MainViewOutput {
     
     func viewDidLoad() {
         view?.configure(

@@ -11,7 +11,7 @@ public struct RulePriority {
     
     // MARK: - Properties
 
-    private var raw: Int
+    @Limited private var raw: Int
     
     // MARK: - Initialization
     
@@ -30,6 +30,10 @@ public extension RulePriority {
 }
 
 extension RulePriority: Comparable {
+    
+    public static func == (lhs: RulePriority, rhs: RulePriority) -> Bool {
+        lhs.raw == rhs.raw
+    }
     
     public static func < (lhs: RulePriority, rhs: RulePriority) -> Bool {
         lhs.raw < rhs.raw

@@ -27,7 +27,7 @@ public class Validator {
             }
             rule.voiter = voter
             let result =  partialResult +
-                (rule.isValid ? [] : [DefaultConflict(tag: rule.tag, priority: rule.priority)])
+                (rule.isValid ? [] : [Conflict(tag: rule.tag, priority: rule.priority)])
             rule.voiter = nil
             return result
         }
@@ -41,7 +41,7 @@ public class Validator {
             rule.opponent = voter
             // TODO: - remove DefaultConflict
             let result = partialResult
-                + (rule.isValid ? [] : [DefaultConflict(tag: rule.tag, priority: rule.priority)])
+                + (rule.isValid ? [] : [Conflict(tag: rule.tag, priority: rule.priority)])
             rule.opponent = nil
             return result
         }
@@ -55,7 +55,7 @@ public class Validator {
             }
             rule.opponents = voters
             let result =  partialResult +
-                (rule.isValid ? [] : [DefaultConflict(tag: rule.tag, priority: rule.priority)])
+                (rule.isValid ? [] : [Conflict(tag: rule.tag, priority: rule.priority)])
             rule.opponents = nil
             return result
         }
