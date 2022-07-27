@@ -1,32 +1,23 @@
 //
-//  ValidationRuleProtocol.swift
-//  NonSpaghettiValidation
+//  DefaultRule.swift
+//  Referee
 //
-//  Created by Ilya Cherkasov on 09.06.2022.
+//  Created by Ilya Cherkasov on 27.07.2022.
 //
 
-public protocol Rule: AnyObject {
-    
-    var isValid: Bool { get }
-    var priority: RulePriority { get set }
-    var tag: String { get set }
-    var currentObject: Voting? { get set }
-        
-}
-
-public final class DefaultRule: Rule {
+public final class DefaultOneTwoOneRule: OneTwoOneRule {
     
     // MARK: - Properties
     
     public var priority: RulePriority
     public var tag: String
-    weak public var currentObject: Voting?
+    weak public var opponent: Voting?
     
     public var isValid: Bool {
-        guard let currentObject = currentObject else {
+        guard let opponent = opponent else {
             return false
         }
-        return rule(currentObject)
+        return rule(opponent)
     }
     
     // MARK: - Private properties

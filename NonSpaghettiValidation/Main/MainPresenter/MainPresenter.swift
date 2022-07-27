@@ -12,24 +12,24 @@ final class MainPresenter: MainViewOutput, Refereing {
     // MARK: - Internal properties
     
     weak var view: MainViewInput?
-        
+    
     lazy var votersBody: Voters = {
         
-        let nonEmptyRule = DefaultRule(priority: .hight, tag: "firstRule") { voting in
+        let nonEmptyRule = DefaultOneTwoOneRule(priority: .hight, tag: "firstRule") { voting in
             guard let pupil = voting as? Moon else {
                 return true
             }
             return !pupil.nickname.isEmpty
         }
         
-        let oneCharRule = DefaultRule(priority: .hight, tag: "oneCharRule") { voting in
+        let oneCharRule = DefaultOneTwoOneRule(priority: .hight, tag: "oneCharRule") { voting in
             guard let pupil = voting as? Moon else {
                 return true
             }
             return pupil.nickname.count != 1
         }
         
-        let twoCharRule = DefaultRule(priority: .hight, tag: "twoCharRule") { voting in
+        let twoCharRule = DefaultOneTwoOneRule(priority: .hight, tag: "twoCharRule") { voting in
             guard let pupil = voting as? Moon else {
                 return true
             }
@@ -66,18 +66,18 @@ final class MainPresenter: MainViewOutput, Refereing {
             withFileds:
                 votersBody.voters.compactMap { $0 as? ViewRepresentable }
                 .map { pupil in
-                var model = InputCellModel(
-                    nickname: pupil.nickname,
-                    color: pupil.color
-                )
-                model.nicknameChanged = { [weak pupil] nickname in
-                    pupil?.nickname = nickname
+                    var model = InputCellModel(
+                        nickname: pupil.nickname,
+                        color: pupil.color
+                    )
+                    model.nicknameChanged = { [weak pupil] nickname in
+                        pupil?.nickname = nickname
+                    }
+                    model.goTripStatusChanged = { [weak pupil] isWantGoTrip in
+                        pupil?.isWantGoTrip = isWantGoTrip
+                    }
+                    return model
                 }
-                model.goTripStatusChanged = { [weak pupil] isWantGoTrip in
-                    pupil?.isWantGoTrip = isWantGoTrip
-                }
-                return model
-            }
         )
     }
     

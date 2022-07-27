@@ -11,7 +11,7 @@ public struct RulePriority {
     
     // MARK: - Properties
 
-    var raw: Int
+    private var raw: Int
     
     // MARK: - Initialization
     

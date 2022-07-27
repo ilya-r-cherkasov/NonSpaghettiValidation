@@ -17,16 +17,35 @@ public class Validator {
         self.rules = rules
     }
     
-    // MARK: - Functions
+    // MARK: - Methods
     
-    func validate(for object: Voting) -> [Conflict] {
-        rules.reduce([Conflict]()) {
-            // TODO: Такое себе канеш сетить тут объект, но пока так
-            $1.currentObject = object
-            let result = $0 + ($1.isValid ? [] : [DummyConflict(tag: $1.tag, priority: $1.priority)])
-            $1.currentObject = nil
+    func checkYourself() -> [Conflict] {
+        let selfCheckRules = rules.filter { $0 is SelfCheckRule }
+        return selfCheckRules.reduce([Conflict]()) { partialResult, rule in
+            guard let rule = rule as? SelfCheckRule else {
+                return partialResult
+            }
+            return partialResult +
+                (rule.isValid ? [] : [DefaultConflict(tag: rule.tag, priority: rule.priority)])
+        }
+    }
+    
+    func startOneTwoOne(with voter: Voting) -> [Conflict] {
+        rules.reduce([Conflict]()) { partialResult, rule in
+            guard let rule = rule as? OneTwoOneRule else {
+                return partialResult
+            }
+            rule.opponent = voter
+            // TODO: - remove DefaultConflict
+            let result = partialResult
+                + (rule.isValid ? [] : [DefaultConflict(tag: rule.tag, priority: rule.priority)])
+            rule.opponent = nil
             return result
         }
     }
+    
+}
+
+private extension Validator {
     
 }
