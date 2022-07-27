@@ -35,7 +35,10 @@ public class Referee: VotersProvider {
     
     public func startVoting() -> [Conflict] {
         let rawConflicts = voters.reduce([Conflict]()) {
-            $0 + $1.checkYourself() + $1.askOther()
+            $0
+                + $1.checkYourself()
+                + $1.startOneTwoOnes()
+                + $1.startRoundTable()
         }
         return tryResolve(conficts: rawConflicts)
     }

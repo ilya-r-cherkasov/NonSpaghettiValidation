@@ -9,7 +9,5 @@ public protocol Conflict {
     
     var tag: String { get set }
     var priority: RulePriority { get set }
-    
-    init(tag: String, priority: RulePriority)
-    
+        
 }

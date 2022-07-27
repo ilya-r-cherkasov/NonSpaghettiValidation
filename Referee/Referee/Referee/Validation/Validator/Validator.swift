@@ -19,14 +19,17 @@ public class Validator {
     
     // MARK: - Methods
     
-    func checkYourself() -> [Conflict] {
+    func checkYourself(voter: Voting) -> [Conflict] {
         let selfCheckRules = rules.filter { $0 is SelfCheckRule }
         return selfCheckRules.reduce([Conflict]()) { partialResult, rule in
             guard let rule = rule as? SelfCheckRule else {
                 return partialResult
             }
-            return partialResult +
+            rule.voiter = voter
+            let result =  partialResult +
                 (rule.isValid ? [] : [DefaultConflict(tag: rule.tag, priority: rule.priority)])
+            rule.voiter = nil
+            return result
         }
     }
     
@@ -44,8 +47,18 @@ public class Validator {
         }
     }
     
-}
-
-private extension Validator {
+    func startRoundTable(with voters: [Voting]) -> [Conflict] {
+        let roundTableRules = rules.filter { $0 is RoundTableRule }
+        return roundTableRules.reduce([Conflict]()) { partialResult, rule in
+            guard let rule = rule as? RoundTableRule else {
+                return partialResult
+            }
+            rule.opponents = voters
+            let result =  partialResult +
+                (rule.isValid ? [] : [DefaultConflict(tag: rule.tag, priority: rule.priority)])
+            rule.opponents = nil
+            return result
+        }
+    }
     
 }

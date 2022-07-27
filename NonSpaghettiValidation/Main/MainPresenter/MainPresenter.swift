@@ -15,25 +15,36 @@ final class MainPresenter: MainViewOutput, Refereing {
     
     lazy var votersBody: Voters = {
         
-        let nonEmptyRule = DefaultOneTwoOneRule(priority: .hight, tag: "firstRule") { voting in
-            guard let pupil = voting as? Moon else {
+        let nonEmptyRule = DefaultOneTwoOneRule(priority: .hight, tag: "firstRule") { voter in
+            guard let pupil = voter as? Moon else {
                 return true
             }
             return !pupil.nickname.isEmpty
         }
         
-        let oneCharRule = DefaultOneTwoOneRule(priority: .hight, tag: "oneCharRule") { voting in
-            guard let pupil = voting as? Moon else {
+        let oneCharRule = DefaultOneTwoOneRule(priority: .hight, tag: "oneCharRule") { voter in
+            guard let pupil = voter as? Moon else {
                 return true
             }
             return pupil.nickname.count != 1
         }
         
-        let twoCharRule = DefaultOneTwoOneRule(priority: .hight, tag: "twoCharRule") { voting in
-            guard let pupil = voting as? Moon else {
+        let twoCharRule = DefaultOneTwoOneRule(priority: .hight, tag: "twoCharRule") { voter in
+            guard let pupil = voter as? Moon else {
                 return true
             }
             return pupil.nickname.count != 2
+        }
+        
+        let doNotConsistW = DefaultSelfCheckRule(priority: .hight, tag: "doNotConsistW") { voter in
+            guard let pupil = voter as? Pupil else {
+                return true
+            }
+            return !pupil.nickname.contains("w")
+        }
+        
+        let roundTable = DefaultRoundTableRule(priority: .hight, tag: "roundTable") { voters in
+            return false
         }
         
         return VotersGroup {
@@ -42,7 +53,7 @@ final class MainPresenter: MainViewOutput, Refereing {
                 Star()
                 Moon()
             }
-            VotersRules(nonEmptyRule) {
+            VotersRules([nonEmptyRule, doNotConsistW, roundTable]) {
                 VotersGroup {
                     AirBalloon()
                     Ball()

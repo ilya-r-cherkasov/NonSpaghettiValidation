@@ -1,32 +1,32 @@
 //
-//  DefaultSelfCheckRule.swift
+//  DefaultRoundTableRule.swift
 //  Referee
 //
 //  Created by Ilya Cherkasov on 27.07.2022.
 //
 
-final public class DefaultSelfCheckRule: SelfCheckRule {
+final public class DefaultRoundTableRule: RoundTableRule {
     
     // MARK: - Properties
 
     public var priority: RulePriority
     public var tag: String
-    public var voiter: Voting?
+    public var opponents: [Voting]?
     
     public var isValid: Bool {
-        guard let voiter = voiter else {
+        guard let opponents = opponents else {
             return false
         }
-        return rule(voiter)
+        return rule(opponents)
     }
     
     // MARK: - Private properties
     
-    private var rule: ((Voting) -> Bool)
+    private var rule: (([Voting]) -> Bool)
     
     // MARK: - Initialization
     
-    public init(priority: RulePriority, tag: String, rule: @escaping ((Voting) -> Bool)) {
+    public init(priority: RulePriority, tag: String, rule: @escaping (([Voting]) -> Bool)) {
         self.rule = rule
         self.priority = priority
         self.tag = tag
