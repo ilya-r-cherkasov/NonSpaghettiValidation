@@ -15,28 +15,28 @@ final class MainPresenter: Refereing {
     
     lazy var votersBody: Voters = {
         
-        let nonEmptyRule = DefaultOneTwoOneRule(priority: .hight, tag: "firstRule") { voter in
+        let nonEmptyRule = DefaultOneTwoOneRule(priority: .high, tag: "firstRule") { voter in
             guard let pupil = voter as? Moon else {
                 return true
             }
             return !pupil.nickname.isEmpty
         }
         
-        let oneCharRule = DefaultOneTwoOneRule(priority: .hight, tag: "oneCharRule") { voter in
+        let oneCharRule = DefaultOneTwoOneRule(priority: .high, tag: "oneCharRule") { voter in
             guard let pupil = voter as? Moon else {
                 return true
             }
             return pupil.nickname.count != 1
         }
         
-        let twoCharRule = DefaultOneTwoOneRule(priority: .hight, tag: "twoCharRule") { voter in
+        let twoCharRule = DefaultOneTwoOneRule(priority: .high, tag: "twoCharRule") { voter in
             guard let pupil = voter as? Moon else {
                 return true
             }
             return pupil.nickname.count != 2
         }
         
-        let doNotConsistW = DefaultSelfCheckRule(priority: .hight, tag: "doNotConsistW") { voter in
+        let doNotConsistW = DefaultSelfCheckRule(priority: .high, tag: "doNotConsistW") { voter in
             guard let pupil = voter as? Pupil else {
                 return true
             }

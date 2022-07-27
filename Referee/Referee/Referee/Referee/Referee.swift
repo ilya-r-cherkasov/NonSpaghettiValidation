@@ -78,3 +78,11 @@ private extension Referee {
     }
     
 }
+
+#if DEBUG
+extension Referee {
+    public func exposeTryResolve(_ conficts: [Conflict]) -> [Conflict] {
+        return self.tryResolve(conficts)
+    }
+}
+#endif

@@ -25,7 +25,7 @@ public extension RulePriority {
     
     static let low = RulePriority(250)
     static let medium = RulePriority(500)
-    static let hight = RulePriority(750)
+    static let high = RulePriority(750)
     
 }
 
